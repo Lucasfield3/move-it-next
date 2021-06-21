@@ -3,8 +3,9 @@ import { Profile } from "../components/Profile";
 import { CompletedChalenges } from "../components/CompletedChalenges";
 import styles from '../styles/pages/Home.module.css';
 import { CountDown } from "../components/CountDown";
-
 import Head from 'next/head';
+import React from "react";
+import { ChallengeBox } from "../components/ChallengesBox";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -19,8 +20,8 @@ export default function Home() {
           <CompletedChalenges/>
           <CountDown/>
         </div>
-        <div>
-
+        <div style={{height: '100%'}}>
+          <ChallengeBox/>
         </div>
       </section>
     </div>

@@ -16,7 +16,7 @@
     background: var(--white);
     box-shadow: 0 0 68px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
-    font-size:8.5rem;
+    font-size:7.5rem;
     text-align: center;
 }
 
@@ -41,7 +41,7 @@
     width: 100%;
     height: 5rem;
 
-    margin-top: 2rem;
+    margin-top: 0.7rem;
 
     display: flex;
     align-items: center;
@@ -57,8 +57,25 @@
     font-weight: 600;
 
     transition: background-color 0.2s;
+    outline: none;
 }
 
-.countDownButton:hover{
+.countDownButton:not(:disabled):hover{
     background: var(--blue-dark);
+}
+
+.countDownButtonActive{
+    background: var(--white);
+    color: var(--title);
+}
+
+.countDownButtonActive:not(:disabled):hover{
+    background: var(--red);
+    color: var(--white);
+}
+
+.countDownButton:disabled{
+    background: var(--white);
+    color: var(--text);
+    cursor:not-allowed;
 }
