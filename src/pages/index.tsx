@@ -6,6 +6,7 @@ import { CountDown } from "../components/CountDown";
 import Head from 'next/head';
 import React from "react";
 import { ChallengeBox } from "../components/ChallengesBox";
+import { CountDownProvider } from "../context/CountDownContext";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -14,16 +15,18 @@ export default function Home() {
       </Head>
       <ExperienceBar/>
 
-      <section>
-        <div>
-          <Profile/>
-          <CompletedChalenges/>
-          <CountDown/>
-        </div>
-        <div style={{height: '100%'}}>
-          <ChallengeBox/>
-        </div>
-      </section>
+      <CountDownProvider>
+        <section>
+          <div>
+            <Profile/>
+            <CompletedChalenges/>
+            <CountDown/>
+          </div>
+          <div style={{height: '100%'}}>
+            <ChallengeBox/>
+          </div>
+        </section>
+      </CountDownProvider>
     </div>
   )
 }
