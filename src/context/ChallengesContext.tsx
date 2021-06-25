@@ -19,7 +19,8 @@ interface ChallengesContextData {
     startNewChallenge: ()=> void,
     resetChallenge:()=> void,
     challengeCompleted:()=> void,
-    closeLevelUpModal:()=> void
+    closeLevelUpModal:()=> void, 
+    isLevelUpModalOpen:boolean
 }
 
 interface ChallengesProviderProps {
@@ -110,11 +111,12 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
         resetChallenge,
         experienceToTheNextLevel,
         challengeCompleted, 
-        closeLevelUpModal 
+        closeLevelUpModal,
+        isLevelUpModalOpen 
         }}>
             {children}
 
-            {isLevelUpModalOpen && <LevelUpModal/>}
+            {isLevelUpModalOpen == true && <LevelUpModal/>}
         </ChallengesContext.Provider>
     )
 
