@@ -16,3 +16,26 @@
     gap: 6.25rem;
     align-items: center;
 }
+
+.challengeBoxSection{
+    height: 100%;
+}
+
+@media (max-width:728px){
+    .container section{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 2.25rem;
+    }
+    .challengeBoxSection{
+        width: 100%;
+    }
+    .profileSection{
+        width: 100%;
+    }
+
+}
+

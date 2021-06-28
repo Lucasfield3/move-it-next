@@ -9,6 +9,7 @@ import { ChallengeBox } from "../components/ChallengesBox";
 import { CountDownProvider } from "../context/CountDownContext";
 import { GetServerSideProps } from 'next'
 import { ChallengesProvider } from "../context/ChallengesContext";
+import { ToggleDarktheme } from "../components/ToggleDarkTheme";
 
 
 interface HomeProps {
@@ -32,15 +33,16 @@ export default function Home(props: HomeProps) {
           <title>Início | move.it</title>
         </Head>
         <ExperienceBar/>
+        <ToggleDarktheme/>
 
         <CountDownProvider>
           <section>
-            <div>
+            <div className={styles.profileSection}>
               <Profile/>
               <CompletedChalenges/>
               <CountDown/>
             </div>
-            <div style={{height: '100%'}}>
+            <div className={styles.challengeBoxSection}>
               <ChallengeBox/>
             </div>
           </section>

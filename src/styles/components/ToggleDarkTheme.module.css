@@ -1,0 +1,31 @@
+.toggleDarkThemeContainer{
+    margin: 0 0 1rem 0;
+}
+
+.toggleDarkThemeContainer > .toggle{
+    margin-bottom: 0.5rem;
+}
+
+.toggle{
+    width: 4rem;
+    height: 2rem;
+
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+
+.circleChangeTheme{
+    height: 2rem;
+    width: 2rem;
+
+    background: var(--blue-dark);
+    border-radius: 50%;
+    border: 1px solid var(--white); 
+}
+
+.toggleDarkThemeContainer strong{
+    font-size: 1rem;
+}
