@@ -1,7 +1,10 @@
+import { ToggleDarkThemeProvider } from '../context/ToggleDarkThemeContext'
 import '../styles/global.css'
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <ToggleDarkThemeProvider>
+      <Component {...pageProps} />
+    </ToggleDarkThemeProvider>
   )
 }
 

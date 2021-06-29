@@ -4,12 +4,13 @@ import { CompletedChalenges } from "../components/CompletedChalenges";
 import styles from '../styles/pages/Home.module.css';
 import { CountDown } from "../components/CountDown";
 import Head from 'next/head';
-import React from "react";
+import React, { useContext } from "react";
 import { ChallengeBox } from "../components/ChallengesBox";
 import { CountDownProvider } from "../context/CountDownContext";
 import { GetServerSideProps } from 'next'
 import { ChallengesProvider } from "../context/ChallengesContext";
 import { ToggleDarktheme } from "../components/ToggleDarkTheme";
+import { ToggleDarkThemeContext, ToggleDarkThemeProvider } from "../context/ToggleDarkThemeContext";
 
 
 interface HomeProps {
@@ -20,35 +21,39 @@ interface HomeProps {
 
 export default function Home(props: HomeProps) {
 
+  const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
 
   return (
+   
     <ChallengesProvider
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-      
-      <div className={styles.container}>
-        <Head>
-          <title>Início | move.it</title>
-        </Head>
-        <ExperienceBar/>
-        <ToggleDarktheme/>
+      <body className={styles.bodyHome} style={{background: hasClickedToggle && 'var(--blue-dark)'}}>
+        <div className={styles.container}>
+          <Head>
+            <title>Início | move.it</title>
+          </Head>
+          <ExperienceBar/>
+          <ToggleDarktheme/>
 
-        <CountDownProvider>
-          <section>
-            <div className={styles.profileSection}>
-              <Profile/>
-              <CompletedChalenges/>
-              <CountDown/>
-            </div>
-            <div className={styles.challengeBoxSection}>
-              <ChallengeBox/>
-            </div>
-          </section>
-        </CountDownProvider>
-      </div>
+          <CountDownProvider>
+            <section>
+              <div className={styles.profileSection}>
+                <Profile/>
+                <CompletedChalenges/>
+                <CountDown/>
+              </div>
+              <div className={styles.challengeBoxSection}>
+                <ChallengeBox/>
+              </div>
+            </section>
+          </CountDownProvider>
+        </div>
+      </body>
     </ChallengesProvider>
+      
   )
 }
 

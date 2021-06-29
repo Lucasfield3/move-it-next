@@ -1,8 +1,13 @@
+.bodyHome{
+    margin: 0px;
+    padding: 0px;
+}
+
 .container{
     height: 100vh;
     max-width: 992px;
     margin: 0 auto;
-    padding: 2.5rem 2rem;
+    padding: 0.3rem 2rem 2rem 2.5rem;
 
     display: flex;
     flex-direction: column;
