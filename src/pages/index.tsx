@@ -32,6 +32,7 @@ export default function Home(props: HomeProps) {
   return (
     
     <ChallengesProvider
+    
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
@@ -74,7 +75,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       level:Number(level),
       currentExperience:Number(currentExperience),
       challengesCompleted:Number(challengesCompleted),
-      hasClickedToggle:String(hasClickedToggle)
+      hasClickedToggle:Boolean(hasClickedToggle)
   }
 
   }

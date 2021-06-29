@@ -44,7 +44,6 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
 
     const experienceToTheNextLevel = Math.pow((level + 1 ) * 4, 2)
 
-    const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
 
     function levelUp(){
         setLevel(level + 1)
@@ -101,8 +100,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
         Cookies.set('level', String(level))
         Cookies.set('currentExperience', String(currentExperience))
         Cookies.set('challengesCompleted', String(challengesCompleted))
-        Cookies.set('hasClickedToggle', String(hasClickedToggle))
-    }, [level, currentExperience, challengesCompleted, hasClickedToggle])
+    }, [level, currentExperience, challengesCompleted])
 
     return(
         <ChallengesContext.Provider value={{

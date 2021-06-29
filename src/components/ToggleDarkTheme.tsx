@@ -1,4 +1,5 @@
-import { CSSProperties, useContext } from 'react'
+import Cookies from 'js-cookie'
+import { CSSProperties, useContext, useEffect } from 'react'
 import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext'
 import styles from '../styles/components/ToggleDarkTheme.module.css'
 export function ToggleDarktheme (){
@@ -10,7 +11,6 @@ export function ToggleDarktheme (){
         transition: 'background 200ms ease-in-out'
     } as CSSProperties
 
-    
 
     return(
         <div className={styles.toggleDarkThemeContainer}>
