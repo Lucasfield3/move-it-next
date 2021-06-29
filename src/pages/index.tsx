@@ -10,13 +10,14 @@ import { CountDownProvider } from "../context/CountDownContext";
 import { GetServerSideProps } from 'next'
 import { ChallengesProvider } from "../context/ChallengesContext";
 import { ToggleDarktheme } from "../components/ToggleDarkTheme";
-import { ToggleDarkThemeContext, ToggleDarkThemeProvider } from "../context/ToggleDarkThemeContext";
+import { ToggleDarkThemeContext } from "../context/ToggleDarkThemeContext";
 
 
 interface HomeProps {
   level:number;
   currentExperience:number;
-  challengesCompleted:number
+  challengesCompleted:number;
+  hasClickedToggle:boolean
 }
 
 export default function Home(props: HomeProps) {
@@ -29,12 +30,13 @@ export default function Home(props: HomeProps) {
 } as CSSProperties
 
   return (
-   
+    
     <ChallengesProvider
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
+      
       <body className={styles.bodyHome} style={styleToggle}>
         <div className={styles.container}>
           <Head>
@@ -65,13 +67,14 @@ export default function Home(props: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => { 
 
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies
+  const { level, currentExperience, challengesCompleted, hasClickedToggle } = ctx.req.cookies
 
   return{
     props:{
       level:Number(level),
       currentExperience:Number(currentExperience),
-      challengesCompleted:Number(challengesCompleted)
+      challengesCompleted:Number(challengesCompleted),
+      hasClickedToggle:String(hasClickedToggle)
   }
 
   }

@@ -1,7 +1,8 @@
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import challenges from '../../challenges.json'
 import Cookies from 'js-cookie'
 import { LevelUpModal } from '../components/LevelUpModal'
+import { ToggleDarkThemeContext } from './ToggleDarkThemeContext'
 
 interface Challenge {
     type: 'body' | 'eye';
@@ -42,6 +43,8 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
 
     const experienceToTheNextLevel = Math.pow((level + 1 ) * 4, 2)
+
+    const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
 
     function levelUp(){
         setLevel(level + 1)
@@ -98,7 +101,8 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
         Cookies.set('level', String(level))
         Cookies.set('currentExperience', String(currentExperience))
         Cookies.set('challengesCompleted', String(challengesCompleted))
-    }, [level, currentExperience, challengesCompleted])
+        Cookies.set('hasClickedToggle', String(hasClickedToggle))
+    }, [level, currentExperience, challengesCompleted, hasClickedToggle])
 
     return(
         <ChallengesContext.Provider value={{
