@@ -1,5 +1,6 @@
-import { useContext } from 'react';
+import { CSSProperties, useContext } from 'react';
 import { ChallengesContext } from '../context/ChallengesContext';
+import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext';
 import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar(){
@@ -8,16 +9,27 @@ export function ExperienceBar(){
 
     const percentToTheNextLevel = Math.round((currentExperience * 100)/ experienceToTheNextLevel)
 
+    const {hasClickedToggle} = useContext(ToggleDarkThemeContext)
+
+    const styleToggle = {
+        color: hasClickedToggle && 'var(--white)',
+        transition: 'color 200ms ease-in-out'
+    } as CSSProperties
+
     return(
         <header className={styles.experienceBar}>
-            <span>0 xp</span>
+            <span style={styleToggle}>0 xp</span>
             <div>
                 <div style={{width:`${percentToTheNextLevel}%`, transition:'width 0.5s'}}/>
-                <span className={styles.currentExperience} style={{left: `${percentToTheNextLevel}%`}}>
+                <span className={styles.currentExperience} style={{
+                    left: `${percentToTheNextLevel}%`,
+                    color: hasClickedToggle && 'var(--white)',
+                    transition: 'color 200ms ease-in-out'
+                    }}>
                     {currentExperience} xp
                 </span>
             </div>
-            <span>{experienceToTheNextLevel} xp</span>
+            <span style={styleToggle}>{experienceToTheNextLevel} xp</span>
         </header>
     )
 

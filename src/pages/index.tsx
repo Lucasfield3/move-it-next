@@ -4,7 +4,7 @@ import { CompletedChalenges } from "../components/CompletedChalenges";
 import styles from '../styles/pages/Home.module.css';
 import { CountDown } from "../components/CountDown";
 import Head from 'next/head';
-import React, { useContext } from "react";
+import React, { CSSProperties, useContext } from "react";
 import { ChallengeBox } from "../components/ChallengesBox";
 import { CountDownProvider } from "../context/CountDownContext";
 import { GetServerSideProps } from 'next'
@@ -22,6 +22,11 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
 
   const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
+  
+  const styleToggle = {
+    background: hasClickedToggle && 'var(--title)',
+    transition: 'background 200ms linear'
+} as CSSProperties
 
   return (
    
@@ -30,7 +35,7 @@ export default function Home(props: HomeProps) {
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-      <body className={styles.bodyHome} style={{background: hasClickedToggle && 'var(--blue-dark)'}}>
+      <body className={styles.bodyHome} style={styleToggle}>
         <div className={styles.container}>
           <Head>
             <title>Início | move.it</title>

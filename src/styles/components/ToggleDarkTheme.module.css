@@ -7,23 +7,28 @@
 }
 
 .toggle{
-    width: 4rem;
-    height: 2rem;
+    width: 3.5rem;
+    height: 2.1rem;
 
-    border-radius: 15px;
-    background: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 0 0.2rem;
+
+    border-radius: 18px;
+    background: var(--title);
     box-shadow: var(--box-shadow);
     cursor: pointer;
 }
 
 
 .circleChangeTheme{
-    height: 2rem;
-    width: 2rem;
+    height: 1.8rem;
+    width: 1.8rem;
 
-    background: var(--blue-dark);
+    background: var(--white);
     border-radius: 50%;
-    border: 1px solid var(--white); 
+    /* border: 1px solid var(--white);  */
+    box-shadow: 2px 2px 8px rgb(0 0 0 / 46%);
 }
 
 .toggleDarkThemeContainer strong{

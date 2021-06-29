@@ -1,7 +1,11 @@
-import { useContext} from 'react';
+import { CSSProperties, useContext} from 'react';
 import { CountDownContext } from '../context/CountDownContext';
+import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext';
 import styles from '../styles/components/CountDown.module.css';
+
 export function CountDown (){
+
+    const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
 
     const { 
         minutes, 
@@ -15,6 +19,13 @@ export function CountDown (){
     const [ minutesLeft, minutesRight ] = String(minutes).padStart(2, '0').split('')
     const [ secondsLeft, secondsRight ] = String(seconds).padStart(2, '0').split('')
 
+    const styleToggle = {
+        color: hasClickedToggle && 'var(--white)',
+        transition: 'color 200ms ease-in-out'
+    } as CSSProperties
+
+    
+
    
 
     return(
@@ -24,7 +35,7 @@ export function CountDown (){
                     <span>{minutesLeft}</span>
                     <span>{minutesRight}</span>
                 </div>
-                <span>:</span>
+                <span style={styleToggle}>:</span>
                 <div>
                     <span>{secondsLeft}</span>
                     <span>{secondsRight}</span>

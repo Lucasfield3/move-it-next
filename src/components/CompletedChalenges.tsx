@@ -1,15 +1,23 @@
-import { useContext } from 'react';
+import { CSSProperties, useContext } from 'react';
 import { ChallengesContext } from '../context/ChallengesContext';
+import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext';
 import styles from '../styles/components/CompletedChalenges.module.css';
 
 export function CompletedChalenges (){
 
     const { challengesCompleted } = useContext(ChallengesContext)
 
+    const {hasClickedToggle} = useContext(ToggleDarkThemeContext)
+
+    const styleToggle = {
+        color: hasClickedToggle && 'var(--white)',
+        transition: 'color 200ms ease-in-out'
+    } as CSSProperties
+
     return (
         <div className={styles.completedChalengesContainer}>
-            <span>Desafios completos</span>
-            <span>{challengesCompleted}</span>
+            <span style={styleToggle}>Desafios completos</span>
+            <span style={styleToggle}>{challengesCompleted}</span>
         </div>
     )
 }
