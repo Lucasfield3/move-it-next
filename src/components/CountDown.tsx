@@ -5,7 +5,7 @@ import styles from '../styles/components/CountDown.module.css';
 
 export function CountDown (){
 
-    const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
+    const { theme } = useContext(ToggleDarkThemeContext)
 
     const { 
         minutes, 
@@ -20,7 +20,7 @@ export function CountDown (){
     const [ secondsLeft, secondsRight ] = String(seconds).padStart(2, '0').split('')
 
     const styleToggle = {
-        color: hasClickedToggle && 'var(--white)',
+        color: theme == 'dark' && 'var(--white)',
         transition: 'color 200ms ease-in-out'
     } as CSSProperties
 

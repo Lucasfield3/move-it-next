@@ -9,10 +9,10 @@ export function ExperienceBar(){
 
     const percentToTheNextLevel = Math.round((currentExperience * 100)/ experienceToTheNextLevel)
 
-    const {hasClickedToggle} = useContext(ToggleDarkThemeContext)
+    const {theme} = useContext(ToggleDarkThemeContext)
 
     const styleToggle = {
-        color: hasClickedToggle && 'var(--white)',
+        color: theme == 'dark' && 'var(--white)',
         transition: 'color 200ms ease-in-out'
     } as CSSProperties
 
@@ -23,7 +23,7 @@ export function ExperienceBar(){
                 <div style={{width:`${percentToTheNextLevel}%`, transition:'width 0.5s'}}/>
                 <span className={styles.currentExperience} style={{
                     left: `${percentToTheNextLevel}%`,
-                    color: hasClickedToggle && 'var(--white)',
+                    color: theme == 'dark' && 'var(--white)',
                     transition: 'color 200ms ease-in-out'
                     }}>
                     {currentExperience} xp

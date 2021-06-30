@@ -1,35 +1,41 @@
-import Cookies from "js-cookie";
+import Cookies, { set } from "js-cookie";
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 
 
 interface ToggleDarkThemeContextPrviderProps{
-    children:ReactNode
+    children:ReactNode,
+    theme?:string
 }
 
 interface ToggleDarkThemeContextData{
-    hasClickedToggle:boolean;
-    changeToogle:()=>void
+    theme:string;
+    changeToogle:()=>void;
 }
 
 
 
 export const ToggleDarkThemeContext = createContext({} as ToggleDarkThemeContextData)
 
-export function ToggleDarkThemeProvider({children}: ToggleDarkThemeContextPrviderProps){
-
-    const [ hasClickedToggle, setHasClickedToggle ] = useState(false)
-
+export function ToggleDarkThemeProvider({children, ...rest}: ToggleDarkThemeContextPrviderProps){
+   
+    const [cookies, setCookie] = useCookies(['theme']);
+    const [ theme, setTheme ] = useState(cookies.theme ?? null)
+    const [hasClicked, setHasClicked] = useState(false)
+    console.log(theme)
     function changeToogle(){
-        setHasClickedToggle(!hasClickedToggle)
+        setHasClicked(!hasClicked)
+        setTheme(hasClicked && 'dark' || 'light')
+        
     }
 
     useEffect(()=> {
-        Cookies.set('hasClickedToggle', String(hasClickedToggle))
-    }, [hasClickedToggle])
+        setCookie('theme', theme)
+    }, [hasClicked])
 
-
+   
     return(
-        <ToggleDarkThemeContext.Provider value={{hasClickedToggle, changeToogle}}>
+        <ToggleDarkThemeContext.Provider value={{theme, changeToogle}}>
             {children}
         </ToggleDarkThemeContext.Provider>
     )

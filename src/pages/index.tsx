@@ -17,15 +17,15 @@ interface HomeProps {
   level:number;
   currentExperience:number;
   challengesCompleted:number;
-  hasClickedToggle:boolean
+  theme:boolean
 }
 
 export default function Home(props: HomeProps) {
 
-  const { hasClickedToggle } = useContext(ToggleDarkThemeContext)
+  const { theme } = useContext(ToggleDarkThemeContext)
   
   const styleToggle = {
-    background: hasClickedToggle && 'var(--title)',
+    background: theme == 'dark' && 'var(--title)',
     transition: 'background 200ms linear'
 } as CSSProperties
 
@@ -68,14 +68,14 @@ export default function Home(props: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => { 
 
-  const { level, currentExperience, challengesCompleted, hasClickedToggle } = ctx.req.cookies
+  const { level, currentExperience, challengesCompleted, theme } = ctx.req.cookies
 
   return{
     props:{
       level:Number(level),
       currentExperience:Number(currentExperience),
       challengesCompleted:Number(challengesCompleted),
-      hasClickedToggle:Boolean(hasClickedToggle)
+      theme:theme
   }
 
   }

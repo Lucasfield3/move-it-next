@@ -44,7 +44,6 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
 
     const experienceToTheNextLevel = Math.pow((level + 1 ) * 4, 2)
 
-
     function levelUp(){
         setLevel(level + 1)
         setIsLevelUpModalOpen(true)
@@ -95,7 +94,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     useEffect(()=> {
         Notification.requestPermission()
     }, [])
-
+    
     useEffect(()=> {
         Cookies.set('level', String(level))
         Cookies.set('currentExperience', String(currentExperience))

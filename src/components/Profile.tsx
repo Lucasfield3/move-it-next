@@ -5,10 +5,10 @@ import styles from '../styles/components/Profile.module.css';
 export function Profile (){
 
     const {level} = useContext(ChallengesContext)
-    const {hasClickedToggle} = useContext(ToggleDarkThemeContext)
+    const {theme} = useContext(ToggleDarkThemeContext)
 
     const styleToggle = {
-        color: hasClickedToggle && 'var(--white)',
+        color: theme == 'dark' && 'var(--white)',
         transition: 'color 200ms ease-in-out'
     } as CSSProperties
     
