@@ -20,20 +20,19 @@ export const ToggleDarkThemeContext = createContext({} as ToggleDarkThemeContext
 export function ToggleDarkThemeProvider({children, ...rest}: ToggleDarkThemeContextPrviderProps){
    
     const [cookies, setCookie] = useCookies(['theme']);
-    const [ theme, setTheme ] = useState(cookies.theme ?? null)
+    const [ theme, setTheme ] = useState(cookies.theme ?? 'light')
     const [hasClicked, setHasClicked] = useState(false)
     console.log(theme)
     function changeToogle(){
         setHasClicked(!hasClicked)
-        setTheme(hasClicked && 'dark' || 'light')
-        
+        setTheme(hasClicked  && 'dark' || 'light')
     }
 
     useEffect(()=> {
         setCookie('theme', theme)
     }, [hasClicked])
 
-   
+
     return(
         <ToggleDarkThemeContext.Provider value={{theme, changeToogle}}>
             {children}

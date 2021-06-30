@@ -79,3 +79,9 @@
     color: var(--text);
     cursor:not-allowed;
 }
+
+@media (max-width:280px) {
+    .countDownContainer > div{
+        font-size: 6.5rem;
+    }
+}

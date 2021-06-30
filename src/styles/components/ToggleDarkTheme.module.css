@@ -34,3 +34,15 @@
 .toggleDarkThemeContainer strong{
     font-size: 1rem;
 }
+
+@media (max-width:728px) {
+    .toggle{
+        width: 3rem;
+        height: 1.5rem;
+    }
+    .circleChangeTheme{
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+
+}
