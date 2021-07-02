@@ -13,6 +13,7 @@ import { ToggleDarktheme } from "../components/ToggleDarkTheme";
 import { ToggleDarkThemeContext } from "../context/ToggleDarkThemeContext";
 
 
+
 interface HomeProps {
   level:number;
   currentExperience:number;
@@ -23,45 +24,53 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
 
   const { theme } = useContext(ToggleDarkThemeContext)
-  
-  const styleToggle = {
-    background: theme == 'dark' && 'var(--title)',
-    transition: 'background 200ms linear'
-} as CSSProperties
+
+    const styleToggle = {
+      background: theme == 'dark' && 'var(--title)',
+      transition: 'background 200ms linear'
+  } as CSSProperties
+
+
 
   return (
     
-    <ChallengesProvider
-    
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-      
-      <body className={styles.bodyHome} style={styleToggle}>
-        <div className={styles.container}>
-          <Head>
-            <title>Início | move.it</title>
-          </Head>
-          <ExperienceBar/>
-          <ToggleDarktheme/>
+    <>
 
-          <CountDownProvider>
-            <section>
-              <div className={styles.profileSection}>
-                <Profile/>
-                <CompletedChalenges/>
-                <CountDown/>
-              </div>
-              <div className={styles.challengeBoxSection}>
-                <ChallengeBox/>
-              </div>
-            </section>
-          </CountDownProvider>
-        </div>
-      </body>
-    </ChallengesProvider>
+    <Head>
+        <title>Início | move.it</title>
+    </Head>
+     
+          <ChallengesProvider
       
+            level={props.level}
+            currentExperience={props.currentExperience}
+            challengesCompleted={props.challengesCompleted}
+          >
+        
+        <div style={styleToggle}>
+
+          <div className={styles.container}>
+          
+            <ExperienceBar/>
+            <ToggleDarktheme/>
+
+            <CountDownProvider>
+              <section>
+                <div className={styles.profileSection}>
+                  <Profile/>
+                  <CompletedChalenges/>
+                  <CountDown/>
+                </div>
+                <div className={styles.challengeBoxSection}>
+                  <ChallengeBox/>
+                </div>
+              </section>
+            </CountDownProvider>
+          </div>
+        </div>
+        </ChallengesProvider>
+
+    </>
   )
 }
 

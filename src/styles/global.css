@@ -33,6 +33,7 @@
 
 body{
     color:var(--text);
+    background: var(--background);
 }
 
 body, input, textarea, button{

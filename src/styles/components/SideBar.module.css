@@ -1,0 +1,97 @@
+
+.sideBarContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    width: 11%;
+    background: #ffff;
+}
+.sideBarGrid{
+    padding: 1rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sideBarMenuArea{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 4px;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.sideBarGrid .sideBarMenuArea > div{
+    height: 0.4rem;
+    width: 2rem;
+    border-radius: 3px;
+    background: var(--blue-dark);
+}
+
+.sideBarActive{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    width: 8%;
+    background: #ffff;
+    /* left:-100% */
+    left:0%;
+}
+
+.sideBarActive .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+}
+
+.barLinks{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.barLinks > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.barLinks > div:first-child{
+    cursor: pointer;
+}
+
+.barLinks > div:first-child:hover{
+    border-left: solid 5px var(--blue-dark);
+}
+
+.barLinks > div:last-child{
+    cursor: pointer;
+}
+
+.barLinks > div:last-child:hover{
+    border-left: solid 5px var(--blue-dark);
+}
+
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons > img:first-child{
+    align-self: flex-end;
+    padding-bottom: 1rem;
+    cursor: pointer;
+    fill: var(--blue-dark);
+}
