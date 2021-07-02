@@ -1,10 +1,20 @@
+import { CSSProperties, useContext } from 'react'
 import { useState } from 'react'
+import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext'
 import styles from '../styles/components/SideBar.module.css'
 export function SideBar(){
 
     const [ isActive, setActive ] = useState(false)
     const [ isOnIconHome, setIsOnIconHome] = useState(false)
     const [ isOnIconAward, setIsOnIconAward] = useState(false)
+
+    const { theme } = useContext(ToggleDarkThemeContext)
+
+    const styleToggle = {
+        background: theme == 'dark' && 'var(--title)',
+        transition:'background 200ms linear',
+    } as CSSProperties
+  
 
     function handleActive(){
         setActive(!isActive)
@@ -20,11 +30,11 @@ export function SideBar(){
 
     return(
         <>
-            <div  className={styles.sideBarGrid}>
+            <div style={styleToggle} className={styles.sideBarGrid}>
                 <div onClick={handleActive}  className={styles.sideBarMenuArea}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div style={{background:theme == 'dark' && 'var(--white)'}} ></div>
+                    <div style={{background:theme == 'dark' && 'var(--white)'}}></div>
+                    <div style={{background:theme == 'dark' && 'var(--white)'}}></div>
                 </div>
             </div>
             

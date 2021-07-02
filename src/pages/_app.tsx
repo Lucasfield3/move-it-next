@@ -5,10 +5,12 @@ import '../styles/global.css'
 import styles from '../styles/pages/Home.module.css';
 function MyApp({ Component, pageProps }) {
 
+
   return (
     <div  className={styles.bodyHome}>
-      <SideBar/>
+      
       <ToggleDarkThemeProvider>
+        <SideBar/>
         <Component {...pageProps} />
         
       </ToggleDarkThemeProvider>
