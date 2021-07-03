@@ -18,7 +18,7 @@ interface HomeProps {
   level:number;
   currentExperience:number;
   challengesCompleted:number;
-  theme:boolean
+  theme:string
 }
 
 export default function Home(props: HomeProps) {
@@ -26,7 +26,7 @@ export default function Home(props: HomeProps) {
   const { theme } = useContext(ToggleDarkThemeContext)
 
     const styleToggle = {
-      background: theme == 'dark' && 'var(--title)',
+      background: theme === 'dark' && 'var(--title)',
       transition: 'background 200ms linear'
   } as CSSProperties
 
@@ -84,7 +84,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       level:Number(level),
       currentExperience:Number(currentExperience),
       challengesCompleted:Number(challengesCompleted),
-      theme:theme
+      theme:String(theme)
   }
 
   }
