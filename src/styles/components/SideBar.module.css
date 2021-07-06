@@ -23,12 +23,14 @@
     cursor: pointer;
 }
 
-.sideBarGrid .sideBarMenuArea > div{
+.sideBarMenuArea > div{
     height: 0.4rem;
     width: 2rem;
     border-radius: 3px;
     background: var(--blue-dark);
 }
+
+
 
 .sideBarActive{
     display: flex;
@@ -83,15 +85,8 @@
 
 
 .icons{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
-    align-items: center;
 }
 
-.icons > img:first-child{
-    align-self: flex-end;
-    padding-bottom: 1rem;
-    cursor: pointer;
-    fill: var(--blue-dark);
-}

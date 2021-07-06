@@ -26,28 +26,17 @@ export function ToggleDarkThemeProvider({children}: ToggleDarkThemeContextPrvide
    
     //let cookie = Cookies.get('theme')
 
-    const [ theme, setTheme ] = useState('')
-    console.log(cookies.theme)
-
-    const changeToogle = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-        console.log(cookies)
-    };
-
-    
+    const [ theme, setTheme ] = useState(cookies.theme ?? 'light')
+    const [hasClicked, setHasClicked] = useState(false)
     console.log(theme)
+    function changeToogle(){
+        setHasClicked(!hasClicked)
+        setTheme(hasClicked && 'dark' || 'light')
+    }
 
-    useEffect(()=>{
-       if(cookies){
-           setTheme(cookies.theme)
-       }else{
-           setTheme('light')
-       }
-    }, [])
-
-    useEffect(()=>{
+    useEffect(()=> {
         setCookie('theme', theme)
-    },[theme])
+    }, [hasClicked])
     // useEffect(()=> {
         //updateState()
     // }, [])

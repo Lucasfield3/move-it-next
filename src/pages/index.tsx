@@ -14,7 +14,7 @@ import { ToggleDarkThemeContext } from "../context/ToggleDarkThemeContext";
 
 
 
-interface HomeProps {
+export interface HomeProps {
   level:number;
   currentExperience:number;
   challengesCompleted:number;
