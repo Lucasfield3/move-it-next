@@ -38,7 +38,7 @@
 .leftTitles{
     display: flex;
     flex-direction: row;
-    width: 18%;
+    width: 17%;
     justify-content: space-between;
 
 }
@@ -46,6 +46,6 @@
 .rightTitles{
     display: flex;
     flex-direction: row;
-    width: 35%;
+    width: 36%;
     justify-content: space-around;
 }
