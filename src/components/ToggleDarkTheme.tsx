@@ -5,14 +5,12 @@ export function ToggleDarktheme (){
 
     const { theme, changeToogle } = useContext(ToggleDarkThemeContext)
 
+
+
     const styleToggle = {
         background: theme === 'dark' && 'var(--white)' || 'var(--title)',
         transition: 'background 200ms ease-in-out'
     } as CSSProperties
-
-    
-
-
 
     return(
         <div className={styles.toggleDarkThemeContainer}>

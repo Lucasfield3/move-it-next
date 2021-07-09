@@ -1,8 +1,7 @@
-import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useEffect, useState } from 'react'
 import challenges from '../../challenges.json'
 import Cookies from 'js-cookie'
 import { LevelUpModal } from '../components/LevelUpModal'
-import { ToggleDarkThemeContext } from './ToggleDarkThemeContext'
 
 interface Challenge {
     type: 'body' | 'eye';
@@ -39,7 +38,6 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const [currentExperience, setCurrenteExperience] = useState(rest.currentExperience ?? 0)
     const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0)
     const [activeChallenge, setActiveChallenge] = useState(null)
-
 
 
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)

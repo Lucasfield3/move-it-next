@@ -7,30 +7,6 @@
     width: 11%;
     background: #ffff;
 }
-.sideBarGrid{
-    padding: 1rem;
-    width: 8rem;
-    display: flex;
-    justify-content: center;
-}
-
-.sideBarMenuArea{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-row-gap: 4px;
-    height: 2rem;
-    width: 2rem;
-    cursor: pointer;
-}
-
-.sideBarMenuArea > div{
-    height: 0.4rem;
-    width: 2rem;
-    border-radius: 3px;
-    background: var(--blue-dark);
-}
-
-
 
 .sideBarActive{
     display: flex;

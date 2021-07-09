@@ -7,6 +7,9 @@ export function CompletedChalenges (){
 
     const { challengesCompleted } = useContext(ChallengesContext)
 
+
+    console.log({challengesCompleted})
+
     const {theme} = useContext(ToggleDarkThemeContext)
 
     const styleToggle = {

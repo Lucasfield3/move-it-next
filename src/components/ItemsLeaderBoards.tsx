@@ -1,6 +1,11 @@
+import { useCookies } from 'react-cookie'
 import styles from '../styles/components/ItemsLeaderBoards.module.css'
 
+
 export function ItemsLeaderBoards(){
+
+    const [ cookies ] = useCookies()
+
 
     return(
         <div className={styles.itemsLeaderBoards}>
@@ -12,13 +17,13 @@ export function ItemsLeaderBoards(){
                         <strong >Lucas Rocha</strong>
                         <p>
                             <img src='/icons/level.svg' alt='level'></img>
-                            Level 1
+                            Level {cookies.level}
                         </p>
                     </div>
                 </div>
                 <div className={styles.rightItems}>
-                    <p><span>1</span> completos</p>
-                    <p><span>1000</span> xp</p>
+                    <p><span>{cookies.challengesCompleted}</span> completos</p>
+                    <p><span>{cookies.currentExperience}</span> xp</p>
                 </div>
             </div>
         </div>

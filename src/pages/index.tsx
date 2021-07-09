@@ -4,13 +4,17 @@ import { CompletedChalenges } from "../components/CompletedChalenges";
 import styles from '../styles/pages/Home.module.css';
 import { CountDown } from "../components/CountDown";
 import Head from 'next/head';
-import React, { CSSProperties, useContext } from "react";
+import React from "react";
 import { ChallengeBox } from "../components/ChallengesBox";
 import { CountDownProvider } from "../context/CountDownContext";
 import { GetServerSideProps } from 'next'
 import { ChallengesProvider } from "../context/ChallengesContext";
 import { ToggleDarktheme } from "../components/ToggleDarkTheme";
-import { ToggleDarkThemeContext } from "../context/ToggleDarkThemeContext";
+import { ToggleDarkThemeProvider } from "../context/ToggleDarkThemeContext";
+import MenuButton from "../components/MenuButton";
+import BodyHome from "../components/BodyHome";
+
+
 
 
 
@@ -18,57 +22,50 @@ export interface HomeProps {
   level:number;
   currentExperience:number;
   challengesCompleted:number;
-  theme:string
+  theme?:string
 }
 
 export default function Home(props: HomeProps) {
-
-  const { theme } = useContext(ToggleDarkThemeContext)
-
-    const styleToggle = {
-      background: theme === 'dark' && 'var(--title)',
-      transition: 'background 200ms linear'
-  } as CSSProperties
-
 
 
   return (
     
     <>
-
+  
     <Head>
         <title>Início | move.it</title>
     </Head>
-     
+    <ToggleDarkThemeProvider theme={props.theme}>
+        <BodyHome>
+
           <ChallengesProvider
       
             level={props.level}
             currentExperience={props.currentExperience}
             challengesCompleted={props.challengesCompleted}
           >
-        
-        <div style={styleToggle}>
-
-          <div className={styles.container}>
           
-            <ExperienceBar/>
-            <ToggleDarktheme/>
+            <MenuButton/>
+            <div className={styles.container}>
+              <ExperienceBar/>
+              <ToggleDarktheme/>
 
-            <CountDownProvider>
-              <section>
-                <div className={styles.profileSection}>
-                  <Profile/>
-                  <CompletedChalenges/>
-                  <CountDown/>
-                </div>
-                <div className={styles.challengeBoxSection}>
-                  <ChallengeBox/>
-                </div>
-              </section>
-            </CountDownProvider>
-          </div>
-        </div>
-        </ChallengesProvider>
+              <CountDownProvider>
+                <section>
+                  <div className={styles.profileSection}>
+                    <Profile/>
+                    <CompletedChalenges/>
+                    <CountDown/>
+                  </div>
+                  <div className={styles.challengeBoxSection}>
+                    <ChallengeBox/>
+                  </div>
+                </section>
+              </CountDownProvider>
+            </div>
+          </ChallengesProvider>
+        </BodyHome>
+       </ToggleDarkThemeProvider>
 
     </>
   )
@@ -90,6 +87,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
 }
+
 
 //Essa função getServerSideProp esta rodando no nodejs e não no browser.
 // O por que dessa função?. Porque quando a  aplicação é requisitada na barra de pesquisa do google,

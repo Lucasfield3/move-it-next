@@ -16,6 +16,7 @@ export function ExperienceBar(){
         transition: 'color 200ms ease-in-out'
     } as CSSProperties
 
+
     return(
         <header className={styles.experienceBar}>
             <span style={styleToggle}>0 xp</span>
