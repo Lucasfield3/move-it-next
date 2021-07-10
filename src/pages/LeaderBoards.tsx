@@ -20,7 +20,7 @@ export default function LeaderBoards (){
   } as CSSProperties
 
 
-
+console.log(cookies.theme)
 
     return(
         <>      
