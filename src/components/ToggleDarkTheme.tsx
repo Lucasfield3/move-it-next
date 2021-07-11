@@ -1,9 +1,9 @@
 import { CSSProperties, useContext} from 'react'
-import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext'
+import { SettingsContext } from '../context/SettingsContext'
 import styles from '../styles/components/ToggleDarkTheme.module.css'
 export function ToggleDarktheme (){
 
-    const { theme, changeToogle } = useContext(ToggleDarkThemeContext)
+    const { theme, changeToogle } = useContext(SettingsContext)
 
 
 

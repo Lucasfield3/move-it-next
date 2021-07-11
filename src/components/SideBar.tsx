@@ -26,9 +26,9 @@ export function SideBar(){
  
     return(
         <> 
-            <nav style={{left:isActive && '0%' || '-100%', transition:'left 0.5s'}} className={styles.sideBarActive}>
+            <nav style={{left:isActive && '0%' || '-100%', transition:'left 500ms ease-in-out'}} className={styles.sideBarActive}>
                 <div className={styles.icons}>
-                    <Image width={50} height={50} className='icon-close' onClick={handleIsActive} src='/icons/close.svg?lastmod=12345678' alt='close'/>
+                    <img  className={styles.iconClose} onClick={handleIsActive} src='/icons/close.svg?lastmod=12345678' alt='close'/>
                     <Image width={50} height={50} src='/icons/Logo.png?lastmod=12345678' alt='icon'/>
                 </div>
                 <div className={styles.barLinks}>

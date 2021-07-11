@@ -48,10 +48,3 @@ a{
     color: inherit;
 }
 
-.icon-close{
-    justify-self: flex-end;
-    padding-bottom: 1rem !important;
-    cursor: pointer;
-    fill: var(--blue-dark);
-}
-

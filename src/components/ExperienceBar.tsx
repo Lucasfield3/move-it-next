@@ -1,6 +1,6 @@
 import { CSSProperties, useContext } from 'react';
 import { ChallengesContext } from '../context/ChallengesContext';
-import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext';
+import { SettingsContext } from '../context/SettingsContext';
 import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar(){
@@ -9,7 +9,7 @@ export function ExperienceBar(){
 
     const percentToTheNextLevel = Math.round((currentExperience * 100)/ experienceToTheNextLevel)
 
-    const {theme} = useContext(ToggleDarkThemeContext)
+    const {theme} = useContext(SettingsContext)
 
     const styleToggle = {
         color: theme == 'dark' && 'var(--white)',

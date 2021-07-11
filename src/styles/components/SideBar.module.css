@@ -17,6 +17,7 @@
     background: #ffff;
     /* left:-100% */
     left:0%;
+    z-index: 9999;
 }
 
 .sideBarActive .logo{
@@ -61,8 +62,21 @@
 
 
 .icons{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+.iconClose{
+    margin-left: auto;
+    margin: 0.6rem 0.7rem 1rem auto;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.iconClose:hover{
+    opacity: 1;
+}
+
 

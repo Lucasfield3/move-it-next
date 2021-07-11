@@ -5,6 +5,7 @@ import { createContext, ReactNode } from "react";
 interface MenuButtonContextData{
     isActive:boolean;
     handleIsActive:()=>void;
+    handleIsActiveForBodyClick:()=>void;
 }
 
 export const MenuButtonContext = createContext({} as MenuButtonContextData)
@@ -23,8 +24,17 @@ export function MenuButtonProvider({children}: MenuButtonProviderProps){
     }
 
 
+       
+    function handleIsActiveForBodyClick(){
+        if(isActive === true){
+            setIsActive(!isActive)
+        }
+    }
+
+
+
     return(
-        <MenuButtonContext.Provider value={{isActive, handleIsActive}}>
+        <MenuButtonContext.Provider value={{isActive, handleIsActive, handleIsActiveForBodyClick}}>
             {children}
         </MenuButtonContext.Provider>
     )

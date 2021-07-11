@@ -10,9 +10,10 @@ import { CountDownProvider } from "../context/CountDownContext";
 import { GetServerSideProps } from 'next'
 import { ChallengesProvider } from "../context/ChallengesContext";
 import { ToggleDarktheme } from "../components/ToggleDarkTheme";
-import { ToggleDarkThemeProvider } from "../context/ToggleDarkThemeContext";
+import { SettingsProvider } from "../context/SettingsContext";
 import MenuButton from "../components/MenuButton";
 import BodyHome from "../components/BodyHome";
+import Settings from "../components/Settings";
 
 
 
@@ -35,7 +36,7 @@ export default function Home(props: HomeProps) {
     <Head>
         <title>Início | move.it</title>
     </Head>
-    <ToggleDarkThemeProvider theme={props.theme}>
+    <SettingsProvider theme={props.theme}>
         <BodyHome>
 
           <ChallengesProvider
@@ -46,6 +47,7 @@ export default function Home(props: HomeProps) {
           >
           
             <MenuButton/>
+            
             <div className={styles.container}>
               <ExperienceBar/>
               <ToggleDarktheme/>
@@ -63,9 +65,10 @@ export default function Home(props: HomeProps) {
                 </section>
               </CountDownProvider>
             </div>
+            <Settings/>
           </ChallengesProvider>
         </BodyHome>
-       </ToggleDarkThemeProvider>
+       </SettingsProvider>
 
     </>
   )

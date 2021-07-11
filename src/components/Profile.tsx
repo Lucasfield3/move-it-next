@@ -1,11 +1,11 @@
 import { CSSProperties, useContext } from 'react';
 import { ChallengesContext } from '../context/ChallengesContext';
-import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext';
+import { SettingsContext } from '../context/SettingsContext';
 import styles from '../styles/components/Profile.module.css';
 export function Profile (){
 
     const {level} = useContext(ChallengesContext)
-    const {theme} = useContext(ToggleDarkThemeContext)
+    const {theme} = useContext(SettingsContext)
 
     const styleToggle = {
         color: theme == 'dark' && 'var(--white)',

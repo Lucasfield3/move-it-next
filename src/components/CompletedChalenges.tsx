@@ -1,6 +1,6 @@
 import { CSSProperties, useContext } from 'react';
 import { ChallengesContext } from '../context/ChallengesContext';
-import { ToggleDarkThemeContext } from '../context/ToggleDarkThemeContext';
+import { SettingsContext } from '../context/SettingsContext';
 import styles from '../styles/components/CompletedChalenges.module.css';
 
 export function CompletedChalenges (){
@@ -8,7 +8,7 @@ export function CompletedChalenges (){
     const { challengesCompleted } = useContext(ChallengesContext)
 
 
-    const {theme} = useContext(ToggleDarkThemeContext)
+    const {theme} = useContext(SettingsContext)
 
     const styleToggle = {
         color: theme == 'dark' && 'var(--white)',
