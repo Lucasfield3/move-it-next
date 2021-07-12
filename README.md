@@ -18,7 +18,7 @@ Home page light/dark theme:
 ![move-it-home-page-dark-theme](https://user-images.githubusercontent.com/62312987/125361943-7418dd80-e344-11eb-953d-2829f4c9b3c0.png)
 
 
-Home page, end of a cicle:
+Home page, end of a cicle. Fim de um ciclo:
 
 ![end-cicle](https://user-images.githubusercontent.com/62312987/125362627-9828ee80-e345-11eb-862c-c70874a6f61d.png)
 
