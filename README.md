@@ -27,3 +27,8 @@ Level up modal:
 
 ![modal](https://user-images.githubusercontent.com/62312987/125362491-5f891500-e345-11eb-922f-678a57a4e2ee.png)
 
+
+Leaderboards page:
+
+![leaderborads-page](https://user-images.githubusercontent.com/62312987/125362860-fe157600-e345-11eb-8004-212e7c65a96a.png)
+
