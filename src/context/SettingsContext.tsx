@@ -24,7 +24,7 @@ export function SettingsProvider({children,...rest}: SettingsContextPrviderProps
   
   const [cookies, setCookie] = useCookies(['theme']);
 
-    const [ theme, setTheme ] = useState<string>(rest.theme)
+    const [ theme, setTheme ] = useState<string>(rest.theme ?? 'light')
     const [hasClickedToggle, setHasClickedToggle] = useState(false)
 
     const [ hasClickedSettings, setHasClickedSettings ] = useState(false)

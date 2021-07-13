@@ -51,7 +51,7 @@ export function ChallengeBox (){
                     <strong>Finalize um ciclo para receber um desafio.</strong>
                     <p>
                         <img src='icons/level-up.svg' alt='level up'/>  
-                        Avançe de level para completando desafios.
+                        Avançe de level para completar desafios.
                     </p>
                 </div>
             )}

@@ -11,22 +11,41 @@
     justify-content: center;
 }
 
-.container{
+
+.container {
     background: var(--white);
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
     padding:2rem 3rem;
     border-radius: 5px;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     text-align: center;
     position: relative;
-
     animation-duration: 0.5s;
 }
+
+.container > div{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1rem;
+    align-items: center;
+}
+
+.container  strong{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: 1rem;
+    font-size: 18px;
+}
+
 
 .container header{
     font-weight: 600;
     color: var(--blue);
+    margin-bottom: 1rem;
+    font-size: 20px;
 }
 
 .container button{
@@ -36,4 +55,9 @@
     background: transparent;
     border: 0;
     font-size: 0px;
+}
+
+.boxToggle{
+    display: flex;
+
 }

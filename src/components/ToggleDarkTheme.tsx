@@ -8,16 +8,22 @@ export function ToggleDarktheme (){
 
 
     const styleToggle = {
-        background: theme === 'dark' && 'var(--white)' || 'var(--title)',
+        background: theme === 'dark' && 'var(--title)' || 'var(--white)',
         transition: 'background 200ms ease-in-out'
+    } as CSSProperties
+
+    const styleCircle = {
+        marginLeft: theme === 'dark' && '1.3rem' || '0rem',
+        background: theme === 'dark' && 'var(--white)' || 'var(--title)',
+        transition:'margin-left 0.2s, background 0.2s linear'
     } as CSSProperties
 
     return(
         <div className={styles.toggleDarkThemeContainer}>
             <div style={styleToggle} onClick={changeToogle} className={styles.toggle}>
-                <div style={{marginLeft: theme === 'dark' && '1.3rem' || '0rem', transition:'margin-left 0.2s'}} className={styles.circleChangeTheme}></div>
+                <div style={styleCircle} className={styles.circleChangeTheme}></div>
             </div>
-            <strong style={{color: theme === 'dark' && 'var(--white)'}}>{theme === 'dark' && 'Light Theme' || 'Dark Theme'}</strong>
+            <strong>{theme === 'dark' && 'Light' || 'Dark'}</strong>
         </div>
     )
 

@@ -50,8 +50,6 @@ export default function Home(props: HomeProps) {
             
             <div className={styles.container}>
               <ExperienceBar/>
-              <ToggleDarktheme/>
-
               <CountDownProvider>
                 <section>
                   <div className={styles.profileSection}>
