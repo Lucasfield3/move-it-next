@@ -3,7 +3,7 @@ import { createContext, ReactNode } from "react";
 
 
 interface MenuButtonContextData{
-    isActive:boolean;
+    isSideActive:boolean;
     handleIsActive:()=>void;
     handleIsActiveForBodyClick:()=>void;
 }
@@ -16,25 +16,25 @@ interface MenuButtonProviderProps {
 
 export function MenuButtonProvider({children}: MenuButtonProviderProps){
 
-    const [ isActive, setIsActive ] = useState(false)
+    const [ isSideActive, setIsSideActive ] = useState(false)
 
     
     function handleIsActive(){
-        setIsActive(!isActive)
+        setIsSideActive(!isSideActive)
     }
 
 
        
     function handleIsActiveForBodyClick(){
-        if(isActive === true){
-            setIsActive(!isActive)
+        if(isSideActive === true){
+            setIsSideActive(!isSideActive)
         }
     }
 
 
 
     return(
-        <MenuButtonContext.Provider value={{isActive, handleIsActive, handleIsActiveForBodyClick}}>
+        <MenuButtonContext.Provider value={{isSideActive, handleIsActive, handleIsActiveForBodyClick}}>
             {children}
         </MenuButtonContext.Provider>
     )

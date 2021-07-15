@@ -1,6 +1,6 @@
 import { CSSProperties, useContext } from 'react'
-import styles from '../../styles/pages/LeaderBoards.module.css'
-import { SettingsContext } from '../../context/SettingsContext'
+import styles from '../styles/pages/LeaderBoards.module.css'
+import { SettingsContext } from '../context/SettingsContext'
 
 export function HeaderLeaderBoard(){
 

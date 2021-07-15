@@ -2,6 +2,7 @@
 import { useContext } from 'react'
 import { SettingsContext } from '../context/SettingsContext'
 import styles from '../styles/components/SettingsModal.module.css'
+import EditCicle from './EditCicle'
 import { ToggleDarktheme } from './ToggleDarkTheme'
 
 export function SettingsModal(){
@@ -10,7 +11,7 @@ export function SettingsModal(){
     return(
         <div className={styles.overlay}>
             <div id='modal' className={`${styles.container} animate__zoomIn`}>
-                <header>Opções</header>
+                <header>Configurações</header>
                 <div>
                     <div className={styles.boxToggle}>
                         <strong>Tema</strong>
@@ -19,7 +20,7 @@ export function SettingsModal(){
                     <div className={styles.editCicle}>
                         <strong>Editar Ciclo</strong>
                     </div>
-                    <strong>timer</strong>
+                    <EditCicle/>
                     <div style={{margin:'1rem 0'}} className={styles.language}>
                         <strong>Linguagem</strong>
                     </div>

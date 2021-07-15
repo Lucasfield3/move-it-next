@@ -8,12 +8,13 @@ export function CountDown (){
     const { theme } = useContext(SettingsContext)
 
     const { 
-        minutes, 
-        seconds, 
         hasFinished, 
         isActive, 
         resetCountDown, 
-        startCountDown 
+        startCountDown,
+        minutes,
+        seconds
+        
     } = useContext(CountDownContext)
 
     const [ minutesLeft, minutesRight ] = String(minutes).padStart(2, '0').split('')
@@ -24,6 +25,7 @@ export function CountDown (){
         transition: 'color 200ms ease-in-out'
     } as CSSProperties
 
+    console.log(minutesRight)
     
 
    

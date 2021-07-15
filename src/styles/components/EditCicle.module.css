@@ -1,0 +1,37 @@
+.timer{
+    display: flex;
+}
+
+.timer > input{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+    background: var(--background);
+    text-align: center;
+    border-style: none;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 34%);
+    color: var(--text);
+    padding: 0 6px;
+}
+
+.timer p{
+    color: var(--blue-dark);
+    line-height: 2rem;
+    font-size: 17px;
+    padding: 0 3px;
+    font-weight: 500;
+}
+
+.timer input::-webkit-outer-spin-button,
+.timer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.timer input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.timer input:focus{
+    outline: none;
+}

@@ -19,14 +19,16 @@ import Settings from "../components/Settings";
 
 
 
-export interface HomeProps {
+export interface PageProps {
   level:number;
   currentExperience:number;
   challengesCompleted:number;
-  theme?:string
+  theme?:string;
+  minutes:string;
+  seconds:string;
 }
 
-export default function Home(props: HomeProps) {
+export default function Home(props: PageProps) {
 
 
   return (
@@ -36,7 +38,7 @@ export default function Home(props: HomeProps) {
     <Head>
         <title>Início | move.it</title>
     </Head>
-    <SettingsProvider theme={props.theme}>
+    <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
         <BodyHome>
 
           <ChallengesProvider
@@ -75,15 +77,17 @@ export default function Home(props: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => { 
 
-  const { level, currentExperience, challengesCompleted, theme } = ctx.req.cookies
+  const { level, currentExperience, challengesCompleted, theme, minutes, seconds } = ctx.req.cookies
 
   return{
     props:{
       level:Number(level),
       currentExperience:Number(currentExperience),
       challengesCompleted:Number(challengesCompleted),
-      theme:String(theme)
-  }
+      theme:String(theme),
+      minutes:String(minutes),
+      seconds:String(seconds)
+      }
 
   }
 

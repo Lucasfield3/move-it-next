@@ -6,19 +6,19 @@ export default function BodyHome({children}){
 
     const { theme} = useContext(SettingsContext)
 
-    const { handleIsActiveForBodyClick, isActive } = useContext(MenuButtonContext)
+    const { handleIsActiveForBodyClick, isSideActive } = useContext(MenuButtonContext)
 
     const styleToggle = {
       background: theme === 'dark' && 'var(--title)',
       transition: 'background 200ms linear',
-      cursor: isActive === true && 'pointer'
+      cursor: isSideActive === true && 'pointer'
     } as CSSProperties
 
 
 
     return(
         <div onClick={handleIsActiveForBodyClick} style={styleToggle} className={styles.bodyHome} >
-           { isActive === true && <div className={styles.overlay}/> || null}
+           { isSideActive === true && <div className={styles.overlay}/> || null}
             {children}
         </div>
     )

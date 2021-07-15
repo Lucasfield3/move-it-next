@@ -6,16 +6,17 @@ import Settings from '../components/Settings';
 import { GetServerSideProps } from 'next';
 import { SettingsProvider } from '../context/SettingsContext';
 import { ChallengesProvider } from '../context/ChallengesContext';
-import { HomeProps } from '.';
+import { PageProps } from '.';
 import BodyHome from '../components/BodyHome';
-import { HeaderLeaderBoard } from '../styles/components/HeaderLeaderBoard';
+import { HeaderLeaderBoard } from '../components/HeaderLeaderBoard';
+import { CountDownProvider } from '../context/CountDownContext';
 
 
-export default function LeaderBoards (props:HomeProps){
+export default function LeaderBoards (props:PageProps){
 
     return(
         <>   
-        <SettingsProvider theme={props.theme}>
+        <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
 
             <ChallengesProvider
         
@@ -23,6 +24,7 @@ export default function LeaderBoards (props:HomeProps){
             currentExperience={props.currentExperience}
             challengesCompleted={props.challengesCompleted}
             >
+                <CountDownProvider>
                 <BodyHome>
                     <MenuButton/>
                     <div className={styles.containerLeaderBoards}>
@@ -33,6 +35,7 @@ export default function LeaderBoards (props:HomeProps){
                     </div>
                     <Settings/>
                 </BodyHome>
+                </CountDownProvider>
             </ChallengesProvider>   
         </SettingsProvider>
         </>
@@ -43,15 +46,17 @@ export default function LeaderBoards (props:HomeProps){
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => { 
 
-    const { level, currentExperience, challengesCompleted, theme } = ctx.req.cookies
+    const { level, currentExperience, challengesCompleted, theme, minutes, seconds } = ctx.req.cookies
   
     return{
       props:{
         level:Number(level),
         currentExperience:Number(currentExperience),
         challengesCompleted:Number(challengesCompleted),
-        theme:String(theme)
-    }
+        theme:String(theme),
+        minutes:String(minutes),
+        seconds:String(seconds)
+        }
   
     }
   

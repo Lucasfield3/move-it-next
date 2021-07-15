@@ -11,7 +11,7 @@ export function SideBar(){
 
     const router = useRouter()
 
-    const { handleIsActive, isActive } = useContext(MenuButtonContext)
+    const { handleIsActive, isSideActive } = useContext(MenuButtonContext)
 
     function iconsHoverHandleHome(){
         setIsOnIconHome(!isOnIconHome)
@@ -26,7 +26,7 @@ export function SideBar(){
  
     return(
         <> 
-            <nav style={{left:isActive && '0%' || '-100%', transition:'left 500ms ease-in-out'}} className={styles.sideBarActive}>
+            <nav style={{left:isSideActive && '0%' || '-100%', transition:'left 500ms ease-in-out'}} className={styles.sideBarActive}>
                 <div className={styles.icons}>
                     <img  className={styles.iconClose} onClick={handleIsActive} src='/icons/close.svg?lastmod=12345678' alt='close'/>
                     <Image width={50} height={50} src='/icons/Logo.png?lastmod=12345678' alt='icon'/>
