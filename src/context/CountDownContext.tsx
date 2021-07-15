@@ -31,7 +31,7 @@ export function CountDownProvider({children }:CountDownProviderProps) {
     const { minutesEdit, secondsEdit, hasClickedSettings } = useContext(SettingsContext)
     const timeInseconds = ((Number(minutesEdit) * 60) + Number(secondsEdit))
     const [hasFinished, setHasFinished] = useState(false)
-    const [time, setTime] = useState(isNaN(timeInseconds ) === true && (0.1 * 60) || timeInseconds) 
+    const [time, setTime] = useState(isNaN(timeInseconds ) === true && (25 * 60) || timeInseconds) 
     const [isActive, setIsActive] = useState(false)
     const minutes =  Math.floor( time / 60 ) 
     const seconds = time % 60 
@@ -49,7 +49,7 @@ export function CountDownProvider({children }:CountDownProviderProps) {
         clearTimeout(countDownTimeOut)
         setHasFinished(false)
         setIsActive(false)
-        setTime(isNaN(timeInseconds ) === true && (0.1 * 60) || timeInseconds)
+        setTime(isNaN(timeInseconds ) === true && (25 * 60) || timeInseconds)
     }
 
     
@@ -69,7 +69,7 @@ export function CountDownProvider({children }:CountDownProviderProps) {
     }, [isActive, time])
 
     useEffect(()=> {
-        if(!isActive) setTime(isNaN(timeInseconds ) === true && (0.1 * 60) || timeInseconds)
+        if(!isActive) setTime(isNaN(timeInseconds ) === true && (25 * 60) || timeInseconds)
     }, [hasClickedSettings])
 
 
