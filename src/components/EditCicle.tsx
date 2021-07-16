@@ -13,12 +13,12 @@ export default function EditCicle(){
             <input value={minutesEdit}  onChange={(e)=>{
                setMinutesInput(e.target.value)
                 console.log(e.target.value)
-                }} max={99} pattern='\d*' min={1}  type='number' placeholder='00'/>
+                }} max={99} pattern='\d*' min={1}  type='number'/>
             <p>:</p>
             <input value={secondsEdit}  onChange={(e)=>{
                 setSecondsInput(e.target.value)
                 console.log(e.target.value)
-                }} max={99} pattern='\d*' min={1}  type='number' placeholder='00'/>
+                }} max={99} pattern='\d*' min={1}  type='number'/>
         </div>
     )
 
