@@ -35,3 +35,7 @@
 .timer input:focus{
     outline: none;
 }
+
+.timer input::-webkit-input-placeholder {
+  opacity: 0.5;
+}
