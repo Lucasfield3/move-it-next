@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
 import { useContext } from 'react'
-import { useCookies } from 'react-cookie'
 import { SettingsContext } from '../context/SettingsContext'
 import styles from '../styles/components/EditCicle.module.css'
 
