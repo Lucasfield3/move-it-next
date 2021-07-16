@@ -7,6 +7,9 @@ Aplicativo para estudar melhor com um alarme que a cada intervalo de tempo você
 
 Tecnologias usadas: React, Next, Typescript e Figma.
 
+Obs: App only for desktop format for the time being.
+Obs: App apenas para formato desktop por enquanto.
+
 Link:https://betterwayofstudy.vercel.app/
 
 Home page light/dark theme:
