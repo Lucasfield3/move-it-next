@@ -1,4 +1,4 @@
-# move-it-next(under development/ em desenvolvimento)
+# App to study better/Aplicativo para estudar melhor
 App to study better with alarm set that each time you should take a break and do some fisical excercise or ways to rest your eyes. The objective of this app is to help you absorb your studies. 
 
 Technologies: React, Next, Typescript and Figma.
