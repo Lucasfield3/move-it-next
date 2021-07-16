@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { useContext } from 'react'
+import { useCookies } from 'react-cookie'
 import { SettingsContext } from '../context/SettingsContext'
 import styles from '../styles/components/EditCicle.module.css'
 
@@ -13,12 +15,12 @@ export default function EditCicle(){
             <input value={minutesEdit}  onChange={(e)=>{
                setMinutesInput(e.target.value)
                 console.log(e.target.value)
-                }} maxLength={2} pattern='\d*' placeholder='00' type='text'/>
+                }} max={99} pattern='\d*' min={1}  type='number' placeholder='00'/>
             <p>:</p>
             <input value={secondsEdit}  onChange={(e)=>{
                 setSecondsInput(e.target.value)
                 console.log(e.target.value)
-                }} maxLength={2} pattern='\d*' placeholder='00'  type='text'/>
+                }} max={99} pattern='\d*' min={1}  type='number' placeholder='00'/>
         </div>
     )
 
