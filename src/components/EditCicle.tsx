@@ -18,7 +18,7 @@ export default function EditCicle(){
             <input value={secondsEdit}  onChange={(e)=>{
                 setSecondsInput(e.target.value)
                 console.log(e.target.value)
-                }} max={99} pattern='\d*' min={1}  type='number'/>
+                }} max={59} pattern='\d*' min={1}  type='number'/>
         </div>
     )
 
