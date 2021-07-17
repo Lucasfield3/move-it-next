@@ -36,12 +36,11 @@ export default function Home(props: PageProps) {
   return (
     
     <>
-  
-    <Head>
-        <title>Início | move.it</title>
-    </Head>
     <LanguageProvider selectedlanguage={props.language}>
-
+    <Head>
+        <title>move.it</title>
+    </Head>
+    
     <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
         <BodyHome>
 
