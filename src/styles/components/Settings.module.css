@@ -1,8 +1,12 @@
 .settingsIcon{
+    display: flex;
+    justify-content: flex-end;
     padding: 1rem 1rem 0rem 0rem;
 }
 
 .settingsIcon img{
+    width: 3rem;
+    height: 3rem;
     cursor: pointer;
     animation-duration: 1s;
     animation-iteration-count: infinite;

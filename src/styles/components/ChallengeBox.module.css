@@ -1,5 +1,5 @@
 .challengeBoxContainer{
-    height: 103.3%;
+    height: 27rem;
     background: var(--white);
     border-radius: 5px;
     box-shadow: 0 0 60px rgb(0 0 0 / 5%);
@@ -13,7 +13,9 @@
 
 .challengeBoxNotActive {
     display: flex;
+    height: 100%;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 

@@ -12,9 +12,10 @@ import { ChallengesProvider } from "../context/ChallengesContext";
 import { ToggleDarktheme } from "../components/ToggleDarkTheme";
 import { SettingsProvider } from "../context/SettingsContext";
 import MenuButton from "../components/MenuButton";
-import BodyHome from "../components/BodyHome";
+import Body from "../components/Body";
 import Settings from "../components/Settings";
 import { LanguageProvider } from "../context/LanguageContext";
+import { useEffect } from "react";
 
 
 
@@ -42,7 +43,8 @@ export default function Home(props: PageProps) {
     </Head>
     
     <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
-        <BodyHome>
+        <Body>
+        <div id='body' className={styles.wrappedContent}>
 
           <ChallengesProvider
       
@@ -70,7 +72,8 @@ export default function Home(props: PageProps) {
             </div>
             <Settings/>
           </ChallengesProvider>
-        </BodyHome>
+        </div>
+        </Body>
        </SettingsProvider>
     </LanguageProvider>
     </>

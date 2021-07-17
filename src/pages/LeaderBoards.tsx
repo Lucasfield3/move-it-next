@@ -7,7 +7,7 @@ import { GetServerSideProps } from 'next';
 import { SettingsProvider } from '../context/SettingsContext';
 import { ChallengesProvider } from '../context/ChallengesContext';
 import { PageProps } from '.';
-import BodyHome from '../components/BodyHome';
+import Body from '../components/Body';
 import { HeaderLeaderBoard } from '../components/HeaderLeaderBoard';
 import { CountDownProvider } from '../context/CountDownContext';
 import { LanguageProvider } from '../context/LanguageContext';
@@ -28,7 +28,7 @@ export default function LeaderBoards (props:PageProps){
                 challengesCompleted={props.challengesCompleted}
                 >
                     <CountDownProvider>
-                    <BodyHome>
+                    <Body>
                         <MenuButton/>
                         <div className={styles.containerLeaderBoards}>
                             <HeaderLeaderBoard/>
@@ -37,7 +37,7 @@ export default function LeaderBoards (props:PageProps){
                             </div>
                         </div>
                         <Settings/>
-                    </BodyHome>
+                    </Body>
                     </CountDownProvider>
                 </ChallengesProvider>   
             </SettingsProvider>

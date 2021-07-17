@@ -1,11 +1,14 @@
-.bodyHome{
-    margin: 0 auto 0;
+.body{
+    margin: 0;
     padding: 0;
     min-height: 100vh !important;
     min-height: -webkit-fill-available;
-    display: grid;
-    grid-template-columns: 1fr 28fr 1fr;
     background: var(--background);
+}
+
+.wrappedContent{
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
 }
 
 .overlay{
@@ -23,13 +26,13 @@
 }
 
 .container{
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    height: 100vh;
     max-width: 992px;
-    margin: 0 10rem 0 10rem;
+    margin: 0;
     padding: 1rem 0rem 1rem 0rem;
     display: flex;
     flex-direction: column;
+    min-width: 13rem;
 }
 
 .headerHome{
@@ -45,12 +48,16 @@
     align-items: center;
 }
 
-.challengeBoxSection{
-    height: 89%;
-}
+
 
 @media (max-width:728px){
- 
+    
+    .container{
+        height: unset;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+
     .container section{
         flex: 1;
         display: flex;
