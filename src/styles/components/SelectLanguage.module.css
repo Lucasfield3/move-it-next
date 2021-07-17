@@ -1,0 +1,20 @@
+.customSelect{
+    display: flex;
+    
+}
+
+.customSelect select{
+    color: var(--text);
+    font: 400 1rem'Inter';
+    background: var(--background);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 34%);
+}
+
+.customSelect select > option{
+    background: var(--background);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 34%);
+}

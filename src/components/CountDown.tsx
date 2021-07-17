@@ -1,11 +1,14 @@
 import { CSSProperties, useContext} from 'react';
 import { CountDownContext } from '../context/CountDownContext';
+import { LanguageContext } from '../context/LanguageContext';
 import { SettingsContext } from '../context/SettingsContext';
 import styles from '../styles/components/CountDown.module.css';
 
 export function CountDown (){
 
     const { theme } = useContext(SettingsContext)
+
+    const { handleLanguage } = useContext(LanguageContext)
 
     const { 
         hasFinished, 
@@ -48,7 +51,7 @@ export function CountDown (){
                 disabled
                 className={styles.countDownButton}
                 >
-                    Ciclo encerrado
+                    {handleLanguage().buttonTextBlocked}
                 </button>
             ) : (
                 <>
@@ -58,7 +61,7 @@ export function CountDown (){
                     className={`${styles.countDownButton} ${styles.countDownButtonActive}`}
                     onClick={resetCountDown}
                     >
-                        Abandonar ciclo
+                       {handleLanguage().buttonTextActive}
                     </button>
                     ) : (
                     <button
@@ -66,7 +69,7 @@ export function CountDown (){
                     className={styles.countDownButton}
                     onClick={startCountDown}
                     >
-                    Iniciar um ciclo
+                        {handleLanguage().buttonTextDefault}
                     </button>
                     ) }
                 </>

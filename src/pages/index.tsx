@@ -14,6 +14,7 @@ import { SettingsProvider } from "../context/SettingsContext";
 import MenuButton from "../components/MenuButton";
 import BodyHome from "../components/BodyHome";
 import Settings from "../components/Settings";
+import { LanguageProvider } from "../context/LanguageContext";
 
 
 
@@ -26,6 +27,7 @@ export interface PageProps {
   theme?:string;
   minutes:string;
   seconds:string;
+  language:string;
 }
 
 export default function Home(props: PageProps) {
@@ -38,6 +40,8 @@ export default function Home(props: PageProps) {
     <Head>
         <title>Início | move.it</title>
     </Head>
+    <LanguageProvider selectedlanguage={props.language}>
+
     <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
         <BodyHome>
 
@@ -69,7 +73,7 @@ export default function Home(props: PageProps) {
           </ChallengesProvider>
         </BodyHome>
        </SettingsProvider>
-
+    </LanguageProvider>
     </>
   )
 }
@@ -77,7 +81,7 @@ export default function Home(props: PageProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => { 
 
-  const { level, currentExperience, challengesCompleted, theme, minutes, seconds } = ctx.req.cookies
+  const { level, currentExperience, challengesCompleted, theme, minutes, seconds, language } = ctx.req.cookies
 
   return{
     props:{
@@ -86,7 +90,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       challengesCompleted:Number(challengesCompleted),
       theme:String(theme),
       minutes:String(minutes),
-      seconds:String(seconds)
+      seconds:String(seconds),
+      language:String(language)
       }
 
   }

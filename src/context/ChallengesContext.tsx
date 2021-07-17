@@ -3,11 +3,14 @@ import challenges from '../../challenges.json'
 import Cookies from 'js-cookie'
 import { LevelUpModal } from '../components/LevelUpModal'
 
-interface Challenge {
+export interface Challenge {
     type: 'body' | 'eye';
-    description: string;
+    descriptionPortuguese:string;
+    descriptionEnglish:string;
+    descriptionSpanish: string;
     amount:number
 }
+
 
 interface ChallengesContextData { 
     level:number;
@@ -56,7 +59,6 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     function startNewChallenge(){
        const randomChallengesBox = Math.floor(Math.random() * challenges.length)
        const challenge = challenges[randomChallengesBox]
-
        setActiveChallenge(challenge)
 
        new Audio('/notification.mp3').play()

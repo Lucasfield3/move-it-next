@@ -1,62 +1,86 @@
 [
   {
     "type": "body",
-    "description": "Estique um de seus braços com a palma da mão virada para frente e puxe os dedos para cima por 10 segundos por mão.",
+    "descriptionPortuguese": "Estique um de seus braços com a palma da mão virada para frente e puxe os dedos para cima por 10 segundos por mão.",
+    "descriptionEnglish": "Stretch one of your arms with the palm of your hand turned to foward and pull the fingers up for 10 seconds for each hand.",
+    "descriptionSpanish": "Extienda uno de sus brazos con la palma hacia adelante y levante los dedos durante 10 segundos por mano.",
     "amount": 80
   },
   {
     "type": "body",
-    "description": "Estique seu braço contra o peito e puxe-o utilizando o outro braço por 10 segundos por braço.",
+    "descriptionPortuguese": "Estique seu braço contra o peito e puxe-o utilizando o outro braço por 10 segundos por braço.",
+    "descriptionEnglish": "Stretch your arm against the chest and pull them using the other arm by 10 seconds for each arm.",
+    "descriptionSpanish": "Estire el brazo contra el pecho y tire de él con el otro brazo durante 10 segundos por brazo.",
     "amount": 60
   },
   {
     "type": "body",
-    "description": "Puxe seu pescoço com a ajuda da mão para a direita e para a esquerda, permanecendo na posição por alguns segundos.",
+    "descriptionPortuguese": "Puxe seu pescoço com a ajuda da mão para a direita e para a esquerda, permanecendo na posição por alguns segundos.",
+    "descriptionEnglish": "Pull your neck with your hand to the right and to the left, stay in that position by a few seconds.",
+    "descriptionSpanish": "Puxe seu pescoço com a ajuda da mão para a direita e para a esquerda, permanecendo na posição por alguns segundos.",
     "amount": 70
   },
   {
     "type": "body",
-    "description": "Com as duas mãos na parte de trás da cabeça, leve-a para baixo, alongando a parte de trás da região.",
+    "descriptionPortuguese": "Com as duas mãos na parte de trás da cabeça, leve-a para baixo, alongando a parte de trás da região.",
+    "descriptionEnglish": "With your both hands in the back of your head, take your head down, stretching the back region part.",
+    "descriptionSpanish": "Con ambas manos en la parte posterior de la cabeza, bájela hacia abajo, estirando la parte posterior de la región.",
     "amount": 60
   },
   {
     "type": "body",
-    "description": "Cruze as pernas e desça com as mãos esticadas em direção ao chão. Repita o movimento com a outra perna na frente.",
+    "descriptionPortuguese": "Cruze as pernas e desça com as mãos esticadas em direção ao chão. Repita o movimento com a outra perna na frente.",
+    "descriptionEnglish": "Cruze as pernas e desça com as mãos esticadas em direção ao chão. Repita o movimento com a outra perna na frente.",
+    "descriptionSpanish": "Cruze as pernas e desça com as mãos esticadas em direção ao chão. Repita o movimento com a outra perna na frente.",
     "amount": 100
   },
   {
     "type": "body",
-    "description": "Sentado, abra as pernas e tente encostar as palmas das mãos no chão, repita 3 vezes por 5 segundos.",
+    "descriptionPortuguese": "Sentado, abra as pernas e tente encostar as palmas das mãos no chão, repita 3 vezes por 5 segundos.",
+    "descriptionEnglish": "Sitting, open your legs and try to touch the palms of your hands on the floor, repeat 3 times for 5 seconds.",
+    "descriptionSpanish": "Sentado, separa las piernas e intenta colocar las palmas de las manos en el suelo, repite 3 veces durante 5 segundos.",
     "amount": 80
   },
   {
     "type": "body",
-    "description": "Puxe o joelho de encontro ao peito e segure, troque de perna após 10 segundos.",
+    "descriptionPortuguese": "Puxe o joelho de encontro ao peito e segure, troque de perna após 10 segundos.",
+    "descriptionEnglish": "Pull the knee against your chest and hold, switch legs after 10 seconds.",
+    "descriptionSpanish": "Lleva la rodilla hacia el pecho y sostén, cambia de pierna después de 10 segundos..",
     "amount": 50
   },
   {
     "type": "body",
-    "description": "Sentado, cruze uma perna e incline seu tronco à frente, troque de perna após 10 segundos.",
+    "descriptionPortuguese": "Sentado, cruze uma perna e incline seu tronco à frente, troque de perna após 10 segundos.",
+    "descriptionEnglish": "Sitting, cross one leg and tilt your stem to foward, switch legs after 10 seconds.",
+    "descriptionSpanish": "Sentado, cruce una pierna e incline el torso hacia adelante, cambie de pierna después de 10 segundos.",
     "amount": 80
   },
   {
     "type": "eye",
-    "description": "Sentado, feche os olhos e cubra-os com as palmas da mão durante 2 minutos, depois abra normalmente.",
+    "descriptionPortuguese": "Sentado, feche os olhos e cubra-os com as palmas da mão durante 2 minutos, depois abra normalmente..",
+    "descriptionEnglish": "Sitting, close your eyes and cover them with the palm os your hands for 2 minutes, then open normally..",
+    "descriptionSpanish": "Sentado, cierre los ojos y cúbralos con las palmas de las manos durante 2 minutos, luego ábralos normalmente..",
     "amount": 90
   },
   {
     "type": "eye",
-    "description": "Em algum ambiente aberto, olhe o mais longe que puder em quatro direções por 3s, mexa apenas os olhos. Repita 3 vezes.",
+    "descriptionPortuguese": "Em algum ambiente aberto, olhe o mais longe que puder em quatro direções por 3s, mexa apenas os olhos. Repita 3 vezes..",
+    "descriptionEnglish": "In an open place, look at the far as you can in four differents directions for 3 seconds, move only your eyes. Repeat 3 times..",
+    "descriptionSpanish": "En un entorno abierto, mire lo más lejos que pueda en cuatro direcciones durante 3 segundos, mueva solo los ojos. repetir 3 veces..",
     "amount": 140
   },
   {
     "type": "eye",
-    "description": "Usando os polegares, massage a área abaixo das sobrancelhas em movimentos circulares por 15 segundos.",
+    "descriptionPortuguese": "Usando os polegares, massage a área abaixo das sobrancelhas em movimentos circulares por 15 segundos.",
+    "descriptionEnglish": "Using the thumbs, massage the area bellow the eyebrow in circular movements for 15 seconds.",
+    "descriptionSpanish": "Con los pulgares, masajee el área debajo de las cejas con un movimiento circular durante 15 segundos.",
     "amount": 70
   },
   {
     "type": "body",
-    "description": "Em pé, gire a cintura o máximo que puder para a esquerda, segure por cinco segundos. Repita para a direita.",
+    "descriptionPortuguese": "Em pé, gire a cintura o máximo que puder para a esquerda, segure por cinco segundos. Repita para a direita.",
+    "descriptionEnglish": "Standing up, rotate your waist the maximum as you can to the left, hold for 5 seconds. Repeat to the right.",
+    "descriptionSpanish": "De pie, gire la cintura lo más que pueda hacia la izquierda, manténgala presionada durante cinco segundos. Repita a la derecha.",
     "amount": 90
   }
 ]

@@ -30,9 +30,11 @@ export function SettingsProvider({children,...rest}: SettingsContextPrviderProps
 
     const [cookies, setCookie] = useCookies(['theme']);
 
-    const [ theme, setTheme ] = useState<string>(rest.theme ?? 'light')
+    console.log(rest.theme)
+    console.log(typeof(cookies.theme))
 
-    const [hasClickedToggle, setHasClickedToggle] = useState(false)
+    const [ theme, setTheme ] = useState<string>(rest.theme === 'undefined' && 'light' || rest.theme)
+
     const [ hasClickedSettings, setHasClickedSettings ] = useState(false)
 
    const [ minutesEdit, setMinutes] = useState<string>(rest.minutes)
@@ -42,13 +44,15 @@ export function SettingsProvider({children,...rest}: SettingsContextPrviderProps
         setMinutes(min)
     }
 
+    console.log(theme)
+
 
     function setSecondsInput(sec:string){
         setSeconds(sec)
     }
+
     function changeToogle(){
-        setHasClickedToggle(!hasClickedToggle)
-        setTheme(hasClickedToggle && 'dark' || 'light')
+        setTheme(theme === 'light' && 'dark' || 'light')
     }
 
     function openCloseSettingsModal(){
@@ -57,7 +61,7 @@ export function SettingsProvider({children,...rest}: SettingsContextPrviderProps
 
     useEffect(()=> {
         setCookie('theme', theme)
-    }, [hasClickedToggle])
+    }, [theme])
 
     useEffect(()=> {
         setCookie('minutes', minutesEdit)

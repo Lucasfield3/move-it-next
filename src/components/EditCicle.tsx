@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { ChangeEvent, useContext } from 'react'
-import { MenuButtonContext } from '../context/MenuButtonContext'
+import { useContext } from 'react'
 import { SettingsContext } from '../context/SettingsContext'
 import styles from '../styles/components/EditCicle.module.css'
 

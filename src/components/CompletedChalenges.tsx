@@ -1,5 +1,6 @@
 import { CSSProperties, useContext } from 'react';
 import { ChallengesContext } from '../context/ChallengesContext';
+import { LanguageContext } from '../context/LanguageContext';
 import { SettingsContext } from '../context/SettingsContext';
 import styles from '../styles/components/CompletedChalenges.module.css';
 
@@ -7,6 +8,7 @@ export function CompletedChalenges (){
 
     const { challengesCompleted } = useContext(ChallengesContext)
 
+    const { handleLanguage } = useContext(LanguageContext)
 
     const {theme} = useContext(SettingsContext)
 
@@ -17,7 +19,7 @@ export function CompletedChalenges (){
 
     return (
         <div className={styles.completedChalengesContainer}>
-            <span style={styleToggle}>Desafios completos</span>
+            <span style={styleToggle}>{handleLanguage().challengesText}</span>
             <span style={styleToggle}>{challengesCompleted}</span>
         </div>
     )

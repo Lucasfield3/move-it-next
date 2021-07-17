@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { ChallengesContext } from "./ChallengesContext";
-import { MenuButtonContext } from "./MenuButtonContext";
 import { SettingsContext } from "./SettingsContext";
 
 interface CountDownContextData {
@@ -24,26 +22,20 @@ export function CountDownProvider({children }:CountDownProviderProps) {
 
     let countDownTimeOut: NodeJS.Timeout;
 
-
     const { startNewChallenge } = useContext(ChallengesContext)
-
-
     const { minutesEdit, secondsEdit, hasClickedSettings } = useContext(SettingsContext)
-    const timeInseconds = ((Number(minutesEdit) * 60) + Number(secondsEdit))
+
     const [hasFinished, setHasFinished] = useState(false)
-    const [time, setTime] = useState(isNaN(timeInseconds ) === true && (25 * 60) || timeInseconds) 
     const [isActive, setIsActive] = useState(false)
+
+    const timeInseconds = ((Number(minutesEdit) * 60) + Number(secondsEdit))
+    const [time, setTime] = useState(isNaN(timeInseconds ) === true && (25 * 60) || timeInseconds) 
     const minutes =  Math.floor( time / 60 ) 
     const seconds = time % 60 
   
-
-    console.log(timeInseconds)
-
     function startCountDown(){
         setIsActive(true)
     }
-
-
 
     function resetCountDown(){
         clearTimeout(countDownTimeOut)
@@ -52,7 +44,6 @@ export function CountDownProvider({children }:CountDownProviderProps) {
         setTime(isNaN(timeInseconds ) === true && (25 * 60) || timeInseconds)
     }
 
-    
 
 
     useEffect(()=>{

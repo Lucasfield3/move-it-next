@@ -8,13 +8,13 @@ export function ToggleDarktheme (){
 
 
     const styleToggle = {
-        background: theme === 'dark' && 'var(--title)' || 'var(--white)',
+        background: theme === 'light' && 'var(--white)' || 'var(--title)',
         transition: 'background 200ms ease-in-out'
     } as CSSProperties
 
     const styleCircle = {
-        marginLeft: theme === 'dark' && '1.3rem' || '0rem',
-        background: theme === 'dark' && 'var(--white)' || 'var(--title)',
+        marginLeft: theme === 'light' && '0rem' || '1.3rem',
+        background: theme === 'light' && 'var(--title)' || 'var(--white)',
         transition:'margin-left 0.2s, background 0.2s linear'
     } as CSSProperties
 
