@@ -10,7 +10,7 @@ export function ChallengeBox (){
 
     const { resetCountDown } = useContext(CountDownContext)
 
-    const { selectedlanguage, handleLanguage, handleDescription } = useContext(LanguageContext)
+    const { selectedlanguage, handleLanguage } = useContext(LanguageContext)
 
     function handleSuccededChallenge(){
         challengeCompleted()
@@ -20,6 +20,20 @@ export function ChallengeBox (){
     function handleFailedChallenge(){
         resetChallenge()
         resetCountDown()
+    }
+
+    function handleDescription(){
+        if(selectedlanguage === 'portuguese'){
+            return activeChallenge.descriptionPortuguese
+        }
+
+        if(selectedlanguage === 'english'){
+            return activeChallenge.descriptionEnglish
+        }
+
+        if(selectedlanguage === 'spanish'){
+            return activeChallenge.descriptionSpanish
+        }
     }
 
     // function handleDescriptionLanguage(){

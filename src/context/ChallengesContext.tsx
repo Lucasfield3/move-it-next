@@ -43,7 +43,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0)
     const [activeChallenge, setActiveChallenge] = useState(null)
 
-    const { handleLanguage } = useContext(LanguageContext)
+    const { handleLanguage} = useContext(LanguageContext)
 
 
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
@@ -63,7 +63,6 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
        const randomChallengesBox = Math.floor(Math.random() * challenges.length)
        const challenge = challenges[randomChallengesBox]
        setActiveChallenge(challenge)
-
        new Audio('/notification.mp3').play()
 
         if(Notification.permission === 'granted'){

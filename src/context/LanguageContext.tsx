@@ -41,7 +41,6 @@ interface LanguageContextData{
     changeLanguage:(value:string)=>void;
     selectedlanguage:string;
     handleLanguage:()=>LanguageTypes;
-    handleDescription:()=>string
 }
 
 export const LanguageContext = createContext({} as LanguageContextData)
@@ -64,9 +63,7 @@ export function LanguageProvider({children,...rest}: LanguageProviderProps){
     const english = languagesData.english as LanguageTypes
     const portuguese = languagesData.portuguese as LanguageTypes
     const spanish = languagesData.spanish as LanguageTypes
-
-    const description = challenges[0] as Challenge
-
+    
     function handleLanguage(){
         if(selectedlanguage === 'portuguese'){
             return portuguese
@@ -82,19 +79,7 @@ export function LanguageProvider({children,...rest}: LanguageProviderProps){
 
     }
 
-    function handleDescription(){
-        if(selectedlanguage === 'portuguese'){
-            return description.descriptionPortuguese
-        }
-
-        if(selectedlanguage === 'english'){
-            return description.descriptionEnglish
-        }
-
-        if(selectedlanguage === 'spanish'){
-            return description.descriptionSpanish
-        }
-    }
+    
 
     useEffect(()=>{
         setCookies('language', selectedlanguage)
@@ -103,7 +88,7 @@ export function LanguageProvider({children,...rest}: LanguageProviderProps){
 
 
     return(
-        <LanguageContext.Provider value={{changeLanguage, selectedlanguage, handleLanguage, handleDescription}}>
+        <LanguageContext.Provider value={{changeLanguage, selectedlanguage, handleLanguage}}>
             {children}
         </LanguageContext.Provider>
     )
