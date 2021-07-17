@@ -12,10 +12,9 @@ console.log(selectedlanguage)
     return(
         <div className={styles.customSelect}>
             <select value={selectedlanguage} onChange={(e)=>changeLanguage(e.target.value)}>
-                <option value=''>{handleLanguage().selectlanguageText}</option>
-                <option value='portuguese'>Português</option>
-                <option value='english'>Inglês</option>
-                <option value='spanish'>Espanhol</option>
+                <option value='portuguese'>{handleLanguage().optionPortuguese}</option>
+                <option value='english'>{handleLanguage().optionEnglish}</option>
+                <option value='spanish'>{handleLanguage().optionSpanish}</option>
             </select>
         </div>
     )

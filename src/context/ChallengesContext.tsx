@@ -1,7 +1,8 @@
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import challenges from '../../challenges.json'
 import Cookies from 'js-cookie'
 import { LevelUpModal } from '../components/LevelUpModal'
+import { LanguageContext } from './LanguageContext'
 
 export interface Challenge {
     type: 'body' | 'eye';
@@ -42,6 +43,8 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0)
     const [activeChallenge, setActiveChallenge] = useState(null)
 
+    const { handleLanguage } = useContext(LanguageContext)
+
 
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
 
@@ -64,8 +67,8 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
        new Audio('/notification.mp3').play()
 
         if(Notification.permission === 'granted'){
-            new Notification('Novo desafio!!', {
-                body:`Valendo ${challenge.amount}xp!.`
+            new Notification(`${handleLanguage().notificationHeader}`, {
+                body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
             })
         }
 

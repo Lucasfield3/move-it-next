@@ -24,7 +24,10 @@
             "leaderBoardsChallenge":"Desafios",
             "leaderBoardsExperience":"Experiência",
             "leaderBoardsChallengesCompleted":"completos",
-            "selectlanguageText":"Linguagem"
+            "selectlanguageText":"Linguagem",
+            "optionPortuguese":"Português",
+            "optionEnglish":"Inglês",
+            "optionSpanish":"Espanhol"
     },
     "english":{
         "challengesText": "Challenges complete",
@@ -50,7 +53,10 @@
         "leaderBoardsChallenge":"Challenges",
         "leaderBoardsExperience":"Experience",
         "leaderBoardsChallengesCompleted":"complete",
-        "selectlanguageText":"Languages"
+        "selectlanguageText":"Languages",
+        "optionPortuguese":"Portuguese",
+        "optionEnglish":"English",
+        "optionSpanish":"Spanish"
     },
     "spanish":{
         "challengesText": "Desafíos completos",
@@ -76,6 +82,9 @@
         "leaderBoardsChallenge":"Desafíos",
         "leaderBoardsExperience":"Experiencia",
         "leaderBoardsChallengesCompleted":"completos",
-        "selectlanguageText":"Idiomas"
+        "selectlanguageText":"Idiomas",
+        "optionPortuguese":"Portugués",
+        "optionEnglish":"Inglés",
+        "optionSpanish":"Español"
     }
 }

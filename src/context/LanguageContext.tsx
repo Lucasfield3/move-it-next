@@ -31,6 +31,9 @@ interface LanguageTypes{
     leaderBoardsExperience:string,
     leaderBoardsChallengesCompleted:string,
     selectlanguageText:string,
+    optionPortuguese:string,
+    optionEnglish:string,
+    optionSpanish:string
 }
 
 
