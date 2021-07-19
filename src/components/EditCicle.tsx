@@ -23,17 +23,25 @@ export default function EditCicle(){
         if(isNaN(Number(minutesEdit))){
             setMinutesInput('')
         }
+        if(minutesEdit == 'undefined'){
+            setMinutesInput('25')
+        }
     }
 
     function checkIsNaNSec(){
         if(isNaN(Number(secondsEdit))){
             setSecondsInput('')
         }
+        if(secondsEdit == 'undefined'){
+            setSecondsInput('00')
+        }
     }
 
     useEffect(()=> {
         checkIsNaNMin()
         checkIsNaNSec()
+        console.log(minutesEdit)
+        console.log(secondsEdit)
     }, [])
 
     function handleMaxTimeLimitMinute(value:string){
