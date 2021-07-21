@@ -1,7 +1,8 @@
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { SettingsModal } from "../components/SettingsModal";
-
+import { MediaContext } from "./MediaContext";
+import Router from 'next/router'
 
 
 interface SettingsContextPrviderProps{
@@ -30,22 +31,19 @@ export function SettingsProvider({children,...rest}: SettingsContextPrviderProps
 
     const [cookies, setCookie] = useCookies(['theme']);
 
-    console.log(rest.theme)
-    console.log(typeof(cookies.theme))
-
-    const [ theme, setTheme ] = useState<string>(rest.theme === 'undefined' && 'light' || rest.theme)
+    const [ theme, setTheme ] = useState<string>(cookies.theme === 'undefined' && 'light' || rest.theme)
 
     const [ hasClickedSettings, setHasClickedSettings ] = useState(false)
 
    const [ minutesEdit, setMinutes] = useState<string>(rest.minutes)
    const [ secondsEdit, setSeconds] = useState<string>(rest.seconds)
+   
+
+   const {match} = useContext(MediaContext)
 
     function setMinutesInput(min:string){
         setMinutes(min)
     }
-
-    console.log(theme)
-
 
     function setSecondsInput(sec:string){
         setSeconds(sec)
@@ -53,21 +51,20 @@ export function SettingsProvider({children,...rest}: SettingsContextPrviderProps
 
     function changeToogle(){
         setTheme(theme === 'light' && 'dark' || 'light')
+ 
     }
 
     function openCloseSettingsModal(){
         setHasClickedSettings(!hasClickedSettings)
     }
 
-    useEffect(()=> {
+    useEffect(()=> {     
         setCookie('theme', theme)
     }, [theme])
 
     useEffect(()=> {
         setCookie('minutes', minutesEdit)
         setCookie('seconds', secondsEdit)
-        console.log(cookies.minutes)
-        console.log(cookies.seconds)
     }, [hasClickedSettings])
 
     return(

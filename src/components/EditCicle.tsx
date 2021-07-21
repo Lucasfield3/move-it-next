@@ -40,8 +40,6 @@ export default function EditCicle(){
     useEffect(()=> {
         checkIsNaNMin()
         checkIsNaNSec()
-        console.log(minutesEdit)
-        console.log(secondsEdit)
     }, [])
 
     function handleMaxTimeLimitMinute(value:string){

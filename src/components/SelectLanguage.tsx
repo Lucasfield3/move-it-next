@@ -6,9 +6,6 @@ export default function SelectLanguage(){
 
 const {changeLanguage, selectedlanguage, handleLanguage } = useContext(LanguageContext)
 
-console.log(selectedlanguage)
-
-
     return(
         <div className={styles.customSelect}>
             <select value={selectedlanguage} onChange={(e)=>changeLanguage(e.target.value)}>

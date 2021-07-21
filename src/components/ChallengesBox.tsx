@@ -36,14 +36,6 @@ export function ChallengeBox (){
         }
     }
 
-    // function handleDescriptionLanguage(){
-    //     if(selectedlanguage === 'portuguese') return activeChallenge.descriptionPortuguese
-    //     if(selectedlanguage === 'english') return activeChallenge.descriptionEnglish
-    //     if(selectedlanguage === 'spanish') return activeChallenge.descriptionSpanish
-    // }
- 
-
-
     return(
         <div className={styles.challengeBoxContainer}>
             {activeChallenge ? (

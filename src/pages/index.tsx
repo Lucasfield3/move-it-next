@@ -16,6 +16,10 @@ import Body from "../components/Body";
 import Settings from "../components/Settings";
 import { LanguageProvider } from "../context/LanguageContext";
 import { useEffect } from "react";
+import { useContext } from "react";
+import { MediaContext } from "../context/MediaContext";
+import { SideBar } from "../components/SideBar";
+import { useCookies } from "react-cookie";
 
 
 
@@ -33,6 +37,8 @@ export interface PageProps {
 
 export default function Home(props: PageProps) {
 
+  const { match } = useContext(MediaContext)
+  const [cookies] = useCookies()
 
   return (
     
@@ -42,7 +48,8 @@ export default function Home(props: PageProps) {
         <title>move.it</title>
     </Head>
     
-    <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
+    <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme === undefined && cookies.theme || props.theme}>
+    <SideBar/>
         <Body>
         <div id='body' className={styles.wrappedContent}>
 
@@ -70,6 +77,7 @@ export default function Home(props: PageProps) {
                 </section>
               </CountDownProvider>
             </div>
+            {/* {!match && <Settings/>} */}
             <Settings/>
           </ChallengesProvider>
         </div>

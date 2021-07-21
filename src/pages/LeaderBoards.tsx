@@ -11,6 +11,7 @@ import Body from '../components/Body';
 import { HeaderLeaderBoard } from '../components/HeaderLeaderBoard';
 import { CountDownProvider } from '../context/CountDownContext';
 import { LanguageProvider } from '../context/LanguageContext';
+import { SideBar } from '../components/SideBar';
 
 
 export default function LeaderBoards (props:PageProps){
@@ -20,7 +21,7 @@ export default function LeaderBoards (props:PageProps){
         <LanguageProvider selectedlanguage={props.language}>
             
             <SettingsProvider minutes={props.minutes} seconds={props.seconds} theme={props.theme}>
-
+                 <SideBar/>
                 <ChallengesProvider
             
                 level={props.level}
@@ -29,6 +30,7 @@ export default function LeaderBoards (props:PageProps){
                 >
                     <CountDownProvider>
                     <Body>
+                    <div id='body' className={styles.wrappedContent}>
                         <MenuButton/>
                         <div className={styles.containerLeaderBoards}>
                             <HeaderLeaderBoard/>
@@ -37,6 +39,8 @@ export default function LeaderBoards (props:PageProps){
                             </div>
                         </div>
                         <Settings/>
+
+                    </div>
                     </Body>
                     </CountDownProvider>
                 </ChallengesProvider>   
@@ -49,7 +53,7 @@ export default function LeaderBoards (props:PageProps){
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => { 
 
-    const { level, currentExperience, challengesCompleted, theme, minutes, seconds, language } = ctx.req.cookies
+    const { level, currentExperience, challengesCompleted, theme, minutes, seconds, language } = await ctx.req.cookies
   
     return{
       props:{

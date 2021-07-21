@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useEffect } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
 import { SettingsContext } from '../context/SettingsContext'
 import styles from '../styles/components/SettingsModal.module.css'
@@ -9,8 +10,10 @@ import { ToggleDarktheme } from './ToggleDarkTheme'
 export function SettingsModal(){
 
     const { handleLanguage } = useContext(LanguageContext)
+    const { theme } = useContext(SettingsContext)
 
     const { openCloseSettingsModal } = useContext(SettingsContext)
+
     return(
         <div className={styles.overlay}>
             <div id='modal' className={`${styles.container} animate__zoomIn`}>

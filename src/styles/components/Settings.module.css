@@ -25,3 +25,9 @@
         transform:rotate(360deg);
     }
 }
+
+@media (max-width:700px){
+    .settingsIcon{
+        display: none;
+    }
+}

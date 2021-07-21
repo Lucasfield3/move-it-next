@@ -47,7 +47,7 @@ export const LanguageContext = createContext({} as LanguageContextData)
 
 interface LanguageProviderProps {
     children:ReactNode;
-    selectedlanguage:string
+    selectedlanguage?:string
 }
 
 export function LanguageProvider({children,...rest}: LanguageProviderProps){

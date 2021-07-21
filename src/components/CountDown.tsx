@@ -27,12 +27,7 @@ export function CountDown (){
         color: theme == 'dark' && 'var(--white)',
         transition: 'color 200ms ease-in-out'
     } as CSSProperties
-
-    console.log(minutesRight)
-    
-
    
-
     return(
         <div>
             <div className={styles.countDownContainer}>
