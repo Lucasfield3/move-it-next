@@ -63,3 +63,13 @@
     display: flex;
 
 }
+
+@media (max-width:280px){
+    .container{
+        width: 88%;
+    }
+    .container > div{
+        width: 12rem;
+        justify-content: center;
+    }
+}

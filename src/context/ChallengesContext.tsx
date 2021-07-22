@@ -65,12 +65,14 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
        setActiveChallenge(challenge)
        new Audio('/notification.mp3').play()
 
-        if(Notification.permission === 'granted'){
+        navigator.serviceWorker.register('sw.js');
+        Notification.requestPermission(function(result) {
+        if (result === 'granted') {
             new Notification(`${handleLanguage().notificationHeader}`, {
                 body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
             })
         }
-
+        });
     }
 
     function resetChallenge(){

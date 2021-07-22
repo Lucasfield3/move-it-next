@@ -11,14 +11,12 @@
     border-style: none;
     box-shadow: 0px 1px 4px rgb(0 0 0 / 34%);
     color: var(--text);
-    padding: 0 6px;
 }
 
 .timer p{
     color: var(--blue-dark);
     line-height: 2rem;
     font-size: 17px;
-    padding: 0 3px;
     font-weight: 500;
 }
 
