@@ -65,27 +65,16 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
        const challenge = challenges[randomChallengesBox]
        setActiveChallenge(challenge)
        
-        if(match){
-            new Audio('/notification.mp3').play()
-            Notification.requestPermission(function(result) {
-                if (result === 'granted') {
-                    new Notification(`${handleLanguage().notificationHeader}`, {
-                        body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
-                    })
-                }
-              });
-              alert('foi')
-        }else{
-            new Audio('/notification.mp3').play()
-            navigator.serviceWorker.register('sw.js');
-            Notification.requestPermission(function(result) {
-            if (result === 'granted') {
-                new Notification(`${handleLanguage().notificationHeader}`, {
-                    body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
-                })
-            }
-            });
+        new Audio('/notification.mp3').play()
+        navigator.serviceWorker.register('sw.js');
+        Notification.requestPermission(function(result) {
+        if (result === 'granted') {
+            new Notification(`${handleLanguage().notificationHeader}`, {
+                body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
+            })
         }
+        });
+        
        
         
     }
