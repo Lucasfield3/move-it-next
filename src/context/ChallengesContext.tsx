@@ -69,13 +69,9 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
             new Audio('/notification.mp3').play()
             Notification.requestPermission(function(result) {
                 if (result === 'granted') {
-                  navigator.serviceWorker.ready.then(function(registration) {
-                    registration.showNotification(`${handleLanguage().notificationHeader}`, {
-                      body: `${handleLanguage().notificationText} ${challenge.amount}xp!.`,
-                      vibrate: [200, 100, 200, 100, 200, 100, 200],
-                      tag: 'vibration-sample'
-                    });
-                  });
+                    new Notification(`${handleLanguage().notificationHeader}`, {
+                        body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
+                    })
                 }
               });
               alert('foi')
