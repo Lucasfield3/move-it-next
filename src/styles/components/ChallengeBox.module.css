@@ -109,3 +109,22 @@
     background: var(--green);
 }
 
+@media (max-width:330px){
+    .challengeActive img{
+        width: 7rem;
+    }
+}
+
+@media (max-width:280px){
+    .challengeActive p{
+        font-size: 11px;
+    }
+
+    .challengeActive main strong{
+        font-size: 1.8rem;
+    }
+
+    .challengeActive footer button{
+        font-size: 0.8rem;
+    }
+}
