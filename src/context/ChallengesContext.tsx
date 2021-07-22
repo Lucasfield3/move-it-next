@@ -3,6 +3,7 @@ import challenges from '../../challenges.json'
 import Cookies from 'js-cookie'
 import { LevelUpModal } from '../components/LevelUpModal'
 import { LanguageContext } from './LanguageContext'
+import { MediaContext } from './MediaContext'
 
 export interface Challenge {
     type: 'body' | 'eye';
@@ -44,7 +45,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const [activeChallenge, setActiveChallenge] = useState(null)
 
     const { handleLanguage} = useContext(LanguageContext)
-
+    const { match } = useContext(MediaContext)
 
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
 
@@ -64,7 +65,19 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
        const challenge = challenges[randomChallengesBox]
        setActiveChallenge(challenge)
        new Audio('/notification.mp3').play()
-
+        if(match){
+            Notification.requestPermission(function(result) {
+                if (result === 'granted') {
+                  navigator.serviceWorker.ready.then(function(registration) {
+                    registration.showNotification(`${handleLanguage().notificationHeader}`, {
+                      body: `${handleLanguage().notificationText} ${challenge.amount}xp!.`,
+                      vibrate: [200, 100, 200, 100, 200, 100, 200],
+                      tag: 'vibration-sample'
+                    });
+                  });
+                }
+              });
+        }
         navigator.serviceWorker.register('sw.js');
         Notification.requestPermission(function(result) {
         if (result === 'granted') {
@@ -73,6 +86,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
             })
         }
         });
+        
     }
 
     function resetChallenge(){
