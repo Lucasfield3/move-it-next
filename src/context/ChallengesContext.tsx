@@ -78,6 +78,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
                   });
                 }
               });
+              console.log('foi')
         }else{
             new Audio('/notification.mp3').play()
             navigator.serviceWorker.register('sw.js');
