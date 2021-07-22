@@ -64,8 +64,9 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
        const randomChallengesBox = Math.floor(Math.random() * challenges.length)
        const challenge = challenges[randomChallengesBox]
        setActiveChallenge(challenge)
-       new Audio('/notification.mp3').play()
+       
         if(match){
+            new Audio('/notification.mp3').play()
             Notification.requestPermission(function(result) {
                 if (result === 'granted') {
                   navigator.serviceWorker.ready.then(function(registration) {
@@ -77,15 +78,18 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
                   });
                 }
               });
+        }else{
+            new Audio('/notification.mp3').play()
+            navigator.serviceWorker.register('sw.js');
+            Notification.requestPermission(function(result) {
+            if (result === 'granted') {
+                new Notification(`${handleLanguage().notificationHeader}`, {
+                    body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
+                })
+            }
+            });
         }
-        navigator.serviceWorker.register('sw.js');
-        Notification.requestPermission(function(result) {
-        if (result === 'granted') {
-            new Notification(`${handleLanguage().notificationHeader}`, {
-                body:`${handleLanguage().notificationText} ${challenge.amount}xp!.`
-            })
-        }
-        });
+       
         
     }
 
