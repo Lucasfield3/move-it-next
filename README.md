@@ -21,7 +21,7 @@ Home page light/dark theme:
 ![move-it-home-page-dark-theme](https://user-images.githubusercontent.com/62312987/125361943-7418dd80-e344-11eb-953d-2829f4c9b3c0.png)
 
 
-Home page, end of a cicle. Fim de um ciclo:
+Home page, end of a cicle:
 
 ![end-cicle](https://user-images.githubusercontent.com/62312987/125362627-9828ee80-e345-11eb-862c-c70874a6f61d.png)
 
@@ -34,4 +34,9 @@ Level up modal:
 Leaderboards page:
 
 ![leaderborads-page](https://user-images.githubusercontent.com/62312987/125362860-fe157600-e345-11eb-8004-212e7c65a96a.png)
+
+
+Settings modal:
+
+![image](https://user-images.githubusercontent.com/62312987/128263970-3be27dee-4a0c-4e98-8dd7-68527d49ac02.png)
 
