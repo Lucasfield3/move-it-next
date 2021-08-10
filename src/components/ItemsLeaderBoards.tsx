@@ -15,9 +15,9 @@ export function ItemsLeaderBoards(){
             <strong>1</strong>
             <div className={styles.itemsLeaderBoardsInformation}>
                 <div className={styles.leftItems}>
-                    <img src='https://github.com/Lucasfield3.png' alt='image'/>
+                    <img src='icons/user-profile.png' alt='image'/>
                     <div>
-                        <strong >Lucas Rocha</strong>
+                        <strong >User</strong>
                         <p>
                             <img src='/icons/level.svg' alt='level'></img>
                             Level {cookies.level}

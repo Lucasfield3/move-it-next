@@ -14,9 +14,9 @@ export function Profile (){
     
     return(
         <div className={styles.profileContainer}>
-            <img src='https://github.com/Lucasfield3.png' alt='image'/>
+            <img src='icons/user-profile.png' alt='image'/>
             <div>
-                <strong style={styleToggle}>Lucas Rocha</strong>
+                <strong style={styleToggle}>User</strong>
                 <p style={styleToggle}>
                     <img src='icons/level.svg' alt='level'></img>
                     Level {level}
