@@ -14,27 +14,28 @@ Link:https://betterwayofstudy.vercel.app/
 
 Home page light/dark theme:
 
-![move-it-home-page](https://user-images.githubusercontent.com/62312987/125361604-e5a45c00-e343-11eb-96e3-f714c360be3d.png)
+![image](https://user-images.githubusercontent.com/62312987/129128766-0c56e5a1-8634-40cb-b32b-328c3b740ee2.png)
 
-![move-it-home-page-side-menu](https://user-images.githubusercontent.com/62312987/125361708-15536400-e344-11eb-96e0-71e523d9d19b.png)
+![image](https://user-images.githubusercontent.com/62312987/129128806-db021f65-b0a4-4aa6-ac91-5cf3398c5351.png)
 
 ![image](https://user-images.githubusercontent.com/62312987/129128583-1cfe018c-6f9d-40c6-9a34-fc1731dc754e.png)
 
 
 Home page, end of a cicle:
 
-![end-cicle](https://user-images.githubusercontent.com/62312987/125362627-9828ee80-e345-11eb-862c-c70874a6f61d.png)
+![image](https://user-images.githubusercontent.com/62312987/129128685-0b44ae6b-7537-4d39-abdc-ea12b0c86d14.png)
 
 
 Level up modal:
 
-![modal](https://user-images.githubusercontent.com/62312987/125362491-5f891500-e345-11eb-922f-678a57a4e2ee.png)
+![image](https://user-images.githubusercontent.com/62312987/129128862-b4391e15-a338-498c-8256-ad4ecb042486.png)
 
 
 Leaderboards page:
 
-![leaderborads-page](https://user-images.githubusercontent.com/62312987/125362860-fe157600-e345-11eb-8004-212e7c65a96a.png)
+![image](https://user-images.githubusercontent.com/62312987/129128915-708658d3-3030-4f41-926f-ff9a1a5b9cb0.png)
 
+![image](https://user-images.githubusercontent.com/62312987/129128957-56227e3f-74fd-4e74-a1ed-3651d06321b8.png)
 
 Settings modal:
 
