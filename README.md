@@ -39,5 +39,5 @@ Leaderboards page:
 
 Settings modal:
 
-![image](https://user-images.githubusercontent.com/62312987/128263970-3be27dee-4a0c-4e98-8dd7-68527d49ac02.png)
+![image](https://user-images.githubusercontent.com/62312987/129129021-03802be3-e44d-4169-94d1-4cb15fccf50d.png)
 
